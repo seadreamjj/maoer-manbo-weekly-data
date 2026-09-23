@@ -1,0 +1,65 @@
+name: Weekly Drama Data
+
+on:
+  schedule:
+    # GitHub Actions 使用 UTC
+    # 周四 20:00 UTC = 周五 04:00 北京时间
+    - cron: '0 20 * * 4'
+
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  weekly-data:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Fetch Maoer
+        env:
+          MISSEVAN_COOKIE: ${{ secrets.MISSEVAN_COOKIE }}
+        run: |
+          python scripts/fetch_maoer.py
+
+      - name: Compare Maoer with previous week
+        run: |
+          python scripts/compare_maoer.py
+
+      - name: Fetch Manbo
+        run: |
+          python scripts/fetch_manbo.py
+
+      - name: Compare Manbo with previous week
+        run: |
+          python scripts/compare_manbo.py
+
+      - name: Commit weekly data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add output
+
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "Update weekly drama data $(date -u '+%Y-%m-%d')"
+            git push
+          fi
