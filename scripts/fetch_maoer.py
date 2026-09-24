@@ -21,13 +21,6 @@ INPUT_FILE = os.path.join(
 )
 
 OUTPUT_DIR = os.path.join(ROOT, "output")
-print("\n========== Excel 列名 ==========")
-print(df.columns.tolist())
-print("================================\n")
-
-print("前 3 行数据：")
-print(df.head(3).to_string())
-print("================================\n")
 
 # ============================================================
 # 基础设置
@@ -502,6 +495,15 @@ def main():
         )
 
     df = pd.read_excel(INPUT_FILE)
+
+    print("\n========== Excel 列名 ==========")
+    print(df.columns.tolist())
+    print("================================\n")
+
+    print("前 3 行数据：")
+    print(df.head(3).to_string())
+    print("================================\n")
+
 
     rows = []
 
