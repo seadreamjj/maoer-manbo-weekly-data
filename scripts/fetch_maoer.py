@@ -129,22 +129,42 @@ def extract_id_from_url(url):
 
 
 def get_drama_id(row):
+    # ===== 1. 优先检查常见 ID 列 =====
     for col in ["id", "剧id", "剧集id", "drama_id", "dramaId"]:
         if col in row.index:
             value = row[col]
+
             if pd.notna(value):
                 text = str(value).strip()
+
+                # Excel 数字可能读成 85974.0
                 match = re.search(r"(\d+)", text)
+
                 if match:
                     return match.group(1)
 
+    # ===== 2. 你的 Excel 实际上是：
+    # url 列 = drama_id
+    # 例如 85974.0
+    # =====
     for col in ["url", "URL", "链接"]:
         if col in row.index:
             value = row[col]
+
             if pd.notna(value):
-                drama_id = extract_id_from_url(str(value))
+                text = str(value).strip()
+
+                # 直接处理数字 ID
+                match = re.fullmatch(r"(\d+)(?:\.0+)?", text)
+
+                if match:
+                    return match.group(1)
+
+                # 如果以后 url 列真的变成完整 URL，也兼容
+                drama_id = extract_id_from_url(text)
+
                 if drama_id:
-                    return drama_id
+                    return str(drama_id)
 
     return None
 
@@ -503,6 +523,16 @@ def main():
     print("前 3 行数据：")
     print(df.head(3).to_string())
     print("================================\n")
+    print("\n========== 测试 drama_id ==========")
+    for i, row in df.head(5).iterrows():
+        print(
+            f"第 {i + 1} 行："
+            f"剧名={row.get('剧名')}, "
+            f"url={row.get('url')}, "
+            f"drama_id={get_drama_id(row)}"
+        )
+
+     print("====================================\n")
 
 
     rows = []
