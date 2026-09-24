@@ -532,8 +532,7 @@ def main():
             f"drama_id={get_drama_id(row)}"
         )
 
-     print("====================================\n")
-
+    
 
     rows = []
 
