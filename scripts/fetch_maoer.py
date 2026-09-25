@@ -1,342 +1,517 @@
+# ============================================================
+# 猫耳每周数据抓取
+# GitHub Actions 版本
+#
+# 输入：
+#   data/猫耳在播剧id（跑程序版）.xlsx
+#
+# 输出：
+#   output/猫耳周数据MMDD.xlsx
+#
+# 数据字段：
+#   剧名
+#   url
+#   更新集数
+#   付费集数
+#   id              -> 去重 UID 数量
+#   总弹幕          -> 弹幕总条数
+#   播放量
+#   追剧人数
+#   抓取错误
+#
+# Cookie：
+#   GitHub Actions Secret:
+#   MISSEVAN_COOKIE
+# ============================================================
+
 import os
 import re
 import time
+import json
 from datetime import datetime
 
 import pandas as pd
 import pytz
 import requests
+import urllib3
 
 
 # ============================================================
-# 路径
+# 1. 路径设置
 # ============================================================
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+DATA_DIR = os.path.join(ROOT, "data")
+OUTPUT_DIR = os.path.join(ROOT, "output")
+
 INPUT_FILE = os.path.join(
-    ROOT,
-    "data",
+    DATA_DIR,
     "猫耳在播剧id（跑程序版）.xlsx"
 )
 
-OUTPUT_DIR = os.path.join(ROOT, "output")
+os.makedirs(OUTPUT_DIR, exist_ok=True)
+
 
 # ============================================================
-# 基础设置
+# 2. 北京时间
 # ============================================================
 
 TZ = pytz.timezone("Asia/Shanghai")
 
+NOW = datetime.now(TZ)
+
+OUTPUT_NAME = f"猫耳周数据{NOW.strftime('%m%d')}.xlsx"
+OUTPUT_FILE = os.path.join(OUTPUT_DIR, OUTPUT_NAME)
+
+
+# ============================================================
+# 3. GitHub Secret Cookie
+# ============================================================
+
 COOKIE = os.environ.get("MISSEVAN_COOKIE", "").strip()
+
+if not COOKIE:
+    print("⚠️ 未检测到 MISSEVAN_COOKIE")
+    print("请确认 GitHub → Settings → Secrets and variables → Actions")
+    print("已经添加名为 MISSEVAN_COOKIE 的 Secret。")
+else:
+    print("✅ 已读取 MISSEVAN_COOKIE")
+
+
+# ============================================================
+# 4. HTTP Session
+# ============================================================
+
+session = requests.Session()
 
 HEADERS = {
     "User-Agent": (
-        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+        "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
         "AppleWebKit/537.36 (KHTML, like Gecko) "
         "Chrome/150.0.0.0 Safari/537.36"
     ),
-    "Accept": "application/json, text/plain, */*",
+    "Accept": "*/*",
+    "Referer": "https://www.missevan.com/",
 }
 
 if COOKIE:
     HEADERS["Cookie"] = COOKIE
 
 
-session = requests.Session()
-session.headers.update(HEADERS)
+# 猫耳部分接口偶尔存在证书问题。
+# 正常情况下优先 verify=True。
+urllib3.disable_warnings(
+    urllib3.exceptions.InsecureRequestWarning
+)
 
 
 # ============================================================
-# 工具函数
+# 5. HTTP 请求函数
 # ============================================================
 
-def clean_number(value):
-    """把 API 中可能出现的数字字符串转成数值。"""
-    if value is None:
-        return None
-
-    if isinstance(value, bool):
-        return int(value)
-
-    if isinstance(value, (int, float)):
-        return value
-
-    text = str(value).replace(",", "").strip()
-
-    if not text:
-        return None
-
-    try:
-        if "." in text:
-            return float(text)
-        return int(text)
-    except Exception:
-        return value
-
-
-def first_value(obj, keys):
-    """在一个 dict 中按候选 key 顺序寻找值。"""
-    if not isinstance(obj, dict):
-        return None
-
-    for key in keys:
-        if key in obj and obj[key] is not None:
-            return obj[key]
-
-    return None
-
-
-def find_dict_with_keys(obj, wanted_keys):
+def request_text(
+    url,
+    timeout=30,
+    retries=3,
+    sleep_seconds=2,
+):
     """
-    在未知层级的 JSON 中寻找包含指定 key 的 dict。
-    用于兼容接口返回层级变化。
+    获取普通文本响应。
+
+    特别用于：
+        sound/getdm
+
+    因为这个接口返回的不是 JSON，
+    所以不能调用 response.json()。
     """
-    if isinstance(obj, dict):
-        if any(k in obj for k in wanted_keys):
-            return obj
 
-        for value in obj.values():
-            found = find_dict_with_keys(value, wanted_keys)
-            if found is not None:
-                return found
+    last_error = None
 
-    elif isinstance(obj, list):
-        for item in obj:
-            found = find_dict_with_keys(item, wanted_keys)
-            if found is not None:
-                return found
+    for attempt in range(1, retries + 1):
 
-    return None
+        try:
+            response = session.get(
+                url,
+                headers=HEADERS,
+                timeout=timeout,
+                verify=True,
+            )
+
+            response.raise_for_status()
+
+            return response.text
+
+        except Exception as e:
+
+            last_error = e
+
+            # 某些环境 SSL 有问题，再尝试 verify=False
+            try:
+
+                response = session.get(
+                    url,
+                    headers=HEADERS,
+                    timeout=timeout,
+                    verify=False,
+                )
+
+                response.raise_for_status()
+
+                return response.text
+
+            except Exception as e2:
+
+                last_error = e2
+
+                if attempt < retries:
+                    print(
+                        f"   ⚠️ 请求失败，第 {attempt}/{retries} 次重试："
+                        f"{type(last_error).__name__}: {last_error}"
+                    )
+                    time.sleep(sleep_seconds)
+
+    raise RuntimeError(
+        f"请求失败：{url}\n"
+        f"最后错误：{last_error}"
+    )
 
 
-def extract_id_from_url(url):
-    if not isinstance(url, str):
+def request_json(
+    url,
+    timeout=30,
+    retries=3,
+    sleep_seconds=2,
+):
+    """
+    获取 JSON 接口。
+    """
+
+    last_error = None
+
+    for attempt in range(1, retries + 1):
+
+        try:
+
+            response = session.get(
+                url,
+                headers=HEADERS,
+                timeout=timeout,
+                verify=True,
+            )
+
+            response.raise_for_status()
+
+            return response.json()
+
+        except Exception as e:
+
+            last_error = e
+
+            # SSL fallback
+            try:
+
+                response = session.get(
+                    url,
+                    headers=HEADERS,
+                    timeout=timeout,
+                    verify=False,
+                )
+
+                response.raise_for_status()
+
+                return response.json()
+
+            except Exception as e2:
+
+                last_error = e2
+
+                if attempt < retries:
+                    print(
+                        f"   ⚠️ JSON 请求失败，第 "
+                        f"{attempt}/{retries} 次重试："
+                        f"{type(last_error).__name__}: {last_error}"
+                    )
+                    time.sleep(sleep_seconds)
+
+    raise RuntimeError(
+        f"JSON 请求失败：{url}\n"
+        f"最后错误：{last_error}"
+    )
+
+
+# ============================================================
+# 6. 从 URL / ID 中提取 drama_id
+# ============================================================
+
+def extract_id_from_url(value):
+    """
+    支持：
+
+    85974
+    85974.0
+    "85974"
+    "85974.0"
+    https://www.missevan.com/drama/85974
+    https://www.missevan.com/drama/85974/
+    """
+
+    if pd.isna(value):
         return None
 
-    patterns = [
-        r"drama[_-]?id[=/](\d+)",
-        r"/drama/(\d+)",
-        r"[?&]id=(\d+)",
-    ]
+    s = str(value).strip()
 
-    for pattern in patterns:
-        match = re.search(pattern, url, flags=re.I)
-        if match:
-            return match.group(1)
+    if not s:
+        return None
+
+    # ----------------------------
+    # 纯数字，例如 85974
+    # ----------------------------
+
+    m = re.fullmatch(r"(\d+)(?:\.0+)?", s)
+
+    if m:
+        return m.group(1)
+
+    # ----------------------------
+    # URL
+    # ----------------------------
+
+    m = re.search(r"/(\d+)(?:/?(?:\?.*)?)?$", s)
+
+    if m:
+        return m.group(1)
+
+    # ----------------------------
+    # URL 中任意位置寻找 ID
+    # ----------------------------
+
+    m = re.search(r"(\d+)(?:\.0+)?", s)
+
+    if m:
+        return m.group(1)
 
     return None
 
 
 def get_drama_id(row):
-    # ===== 1. 优先检查常见 ID 列 =====
-    for col in ["id", "剧id", "剧集id", "drama_id", "dramaId"]:
-        if col in row.index:
-            value = row[col]
+    """
+    优先检查常见 ID 列。
+    然后检查 url。
+    """
 
-            if pd.notna(value):
-                text = str(value).strip()
+    possible_columns = [
+        "drama_id",
+        "id",
+        "剧id",
+        "剧ID",
+        "ID",
+    ]
 
-                # Excel 数字可能读成 85974.0
-                match = re.search(r"(\d+)", text)
+    for col in possible_columns:
 
-                if match:
-                    return match.group(1)
+        if col not in row.index:
+            continue
 
-    # ===== 2. 你的 Excel 实际上是：
-    # url 列 = drama_id
-    # 例如 85974.0
-    # =====
-    for col in ["url", "URL", "链接"]:
-        if col in row.index:
-            value = row[col]
+        value = row[col]
 
-            if pd.notna(value):
-                text = str(value).strip()
+        drama_id = extract_id_from_url(value)
 
-                # 直接处理数字 ID
-                match = re.fullmatch(r"(\d+)(?:\.0+)?", text)
+        if drama_id:
+            return drama_id
 
-                if match:
-                    return match.group(1)
+    # 最后从 url 获取
+    if "url" in row.index:
 
-                # 如果以后 url 列真的变成完整 URL，也兼容
-                drama_id = extract_id_from_url(text)
+        drama_id = extract_id_from_url(row["url"])
 
-                if drama_id:
-                    return str(drama_id)
+        if drama_id:
+            return drama_id
 
     return None
 
 
-def request_json(url, timeout=20, retries=3):
-    last_error = None
+# ============================================================
+# 7. 递归寻找字段
+# ============================================================
 
-    for attempt in range(retries):
-        try:
-            response = session.get(
-                url,
-                timeout=timeout
+def recursive_find_values(obj, target_key):
+    """
+    在 JSON 中递归寻找某个 key 的所有值。
+    """
+
+    result = []
+
+    if isinstance(obj, dict):
+
+        for key, value in obj.items():
+
+            if key == target_key:
+                result.append(value)
+
+            result.extend(
+                recursive_find_values(
+                    value,
+                    target_key
+                )
             )
-            response.raise_for_status()
-            return response.json()
 
-        except Exception as exc:
-            last_error = exc
-            wait = min(2 ** attempt, 8)
-            print(
-                f"  请求失败 {attempt + 1}/{retries}: "
-                f"{url}\n  {exc}"
+    elif isinstance(obj, list):
+
+        for item in obj:
+
+            result.extend(
+                recursive_find_values(
+                    item,
+                    target_key
+                )
             )
-            if attempt < retries - 1:
-                time.sleep(wait)
 
-    raise RuntimeError(str(last_error))
+    return result
 
 
-def extract_drama_payload(data):
+# ============================================================
+# 8. 提取 sound_id + need_pay
+# ============================================================
+
+def extract_sound_pay_pairs_from_json(data):
     """
-    猫耳 getdrama 返回结构在不同时间可能略有差异。
-    优先寻找包含 drama/name 的对象。
+    优先从 JSON 对象本身寻找：
+
+        sound_id
+        need_pay
+
+    如果 API 返回结构发生变化，
+    再使用兼容性 fallback。
     """
-    if isinstance(data, dict):
-        if isinstance(data.get("info"), dict):
-            info = data["info"]
-            if isinstance(info.get("drama"), dict):
-                return info["drama"]
 
-        if isinstance(data.get("drama"), dict):
-            return data["drama"]
-
-        found = find_dict_with_keys(
-            data,
-            {
-                "name",
-                "view_count",
-                "sub_count",
-                "sounds",
-            }
-        )
-        if found:
-            return found
-
-    return {}
-
-
-def extract_sound_ids(sound_data):
-    """
-    从 getdramabysound 返回的 JSON 中尽量提取 sound_id。
-    """
-    ids = []
+    pairs = []
 
     def walk(obj):
+
         if isinstance(obj, dict):
-            for key, value in obj.items():
-                key_lower = str(key).lower()
 
-                if key_lower in {
-                    "sound_id",
-                    "soundid",
-                    "soundId",
-                }:
-                    if value is not None:
-                        match = re.search(r"\d+", str(value))
-                        if match:
-                            ids.append(match.group(0))
+            if "sound_id" in obj and "need_pay" in obj:
 
-                walk(value)
+                sid = obj.get("sound_id")
+                pay = obj.get("need_pay")
 
-        elif isinstance(obj, list):
-            for item in obj:
-                walk(item)
+                try:
+                    sid = str(int(float(sid)))
+                except Exception:
+                    sid = str(sid).strip()
 
-    walk(sound_data)
+                try:
+                    pay = str(int(float(pay)))
+                except Exception:
+                    pay = str(pay).strip()
 
-    # 保持顺序去重
-    return list(dict.fromkeys(ids))
-
-
-def extract_pay_flags(sound_data):
-    """
-    从 getdramabysound 中寻找 need_pay。
-    """
-    values = []
-
-    def walk(obj):
-        if isinstance(obj, dict):
-            for key, value in obj.items():
-                key_lower = str(key).lower()
-
-                if key_lower in {
-                    "need_pay",
-                    "needpay",
-                    "needPay",
-                }:
-                    values.append(value)
-
-                walk(value)
-
-        elif isinstance(obj, list):
-            for item in obj:
-                walk(item)
-
-    walk(sound_data)
-    return values
-
-
-def get_uid_from_p_field(p):
-    """
-    猫耳 getdm 的 p 字段通常是逗号分隔结构。
-    当前统计逻辑沿用原程序：第 7 个字段作为 UID。
-    """
-    if p is None:
-        return None
-
-    parts = str(p).split(",")
-
-    if len(parts) > 6:
-        uid = parts[6].strip()
-        return uid or None
-
-    return None
-
-
-def extract_danmaku_uids(data):
-    """
-    尽量兼容 getdm 返回的多种结构。
-    """
-    uids = []
-
-    def walk(obj):
-        if isinstance(obj, dict):
-            if "p" in obj:
-                uid = get_uid_from_p_field(obj.get("p"))
-                if uid:
-                    uids.append(uid)
+                if sid and sid != "None":
+                    pairs.append((sid, pay))
 
             for value in obj.values():
                 walk(value)
 
         elif isinstance(obj, list):
+
             for item in obj:
                 walk(item)
 
     walk(data)
 
-    return uids
+    # 去重，保持原顺序
+    unique_pairs = []
+    seen = set()
+
+    for sid, pay in pairs:
+
+        if sid in seen:
+            continue
+
+        seen.add(sid)
+        unique_pairs.append((sid, pay))
+
+    return unique_pairs
+
+
+def extract_sound_pay_pairs_fallback(raw_text):
+    """
+    兼容原始代码的正则提取方式。
+
+    原代码：
+        sound_id
+        need_pay
+
+    如果 JSON 结构无法直接对应，
+    使用这个方法。
+    """
+
+    sound_ids = re.findall(
+        r'"sound_id"\s*:\s*(\d+)',
+        raw_text
+    )
+
+    pay_flags = re.findall(
+        r'"need_pay"\s*:\s*(\d+)',
+        raw_text
+    )
+
+    pairs = []
+
+    for sid, pay in zip(sound_ids, pay_flags):
+
+        pairs.append(
+            (
+                str(sid),
+                str(pay)
+            )
+        )
+
+    return pairs
 
 
 # ============================================================
-# 单剧抓取
+# 9. 提取 sound_id
+# ============================================================
+
+def extract_sound_ids(data):
+    values = recursive_find_values(
+        data,
+        "sound_id"
+    )
+
+    result = []
+
+    seen = set()
+
+    for value in values:
+
+        try:
+            sid = str(int(float(value)))
+        except Exception:
+            sid = str(value).strip()
+
+        if not sid:
+            continue
+
+        if sid in seen:
+            continue
+
+        seen.add(sid)
+        result.append(sid)
+
+    return result
+
+
+# ============================================================
+# 10. 获取单个剧的数据
 # ============================================================
 
 def fetch_one_drama(drama_id):
-    print(f"\n{'=' * 70}")
-    print(f"处理 drama_id={drama_id}")
-    print(f"{'=' * 70}")
 
     result = {
         "更新集数": None,
+        "付费集数": None,
         "id": None,
         "总弹幕": None,
         "播放量": None,
@@ -344,249 +519,956 @@ def fetch_one_drama(drama_id):
         "抓取错误": "",
     }
 
+    errors = []
+
+    print()
+    print("=" * 70)
+    print(f"🎙️ drama_id = {drama_id}")
+    print("=" * 70)
+
+    # ========================================================
+    # A. getdrama
+    # ========================================================
+
+    drama_url = (
+        "https://www.missevan.com/"
+        f"dramaapi/getdrama?drama_id={drama_id}"
+    )
+
     try:
-        drama_url = (
-            "https://www.missevan.com/"
-            f"dramaapi/getdrama?drama_id={drama_id}"
-        )
 
-        drama_json = request_json(drama_url)
+        drama_data = request_json(drama_url)
 
-        drama = extract_drama_payload(drama_json)
+    except Exception as e:
 
-        name = first_value(
-            drama,
-            ["name", "title", "drama_name"]
-        )
+        error = f"getdrama失败: {e}"
 
-        result["id"] = drama_id
+        print("❌", error)
 
-        result["播放量"] = clean_number(
-            first_value(
-                drama,
-                [
-                    "view_count",
-                    "viewCount",
-                    "views",
-                    "play_count",
-                    "playCount",
-                ],
+        result["抓取错误"] = error
+
+        return result
+
+
+    # ========================================================
+    # B. 检查 drama 信息
+    # ========================================================
+
+    try:
+
+        info = drama_data.get("info", {})
+
+        drama_info = info.get("drama", {})
+
+        drama_name = drama_info.get("name")
+
+        if drama_name:
+            print(f"📖 剧名：{drama_name}")
+
+    except Exception:
+
+        drama_name = None
+
+
+    # ========================================================
+    # C. 提取 sound_id
+    # ========================================================
+
+    sound_ids = extract_sound_ids(
+        drama_data
+    )
+
+    # 如果递归没有找到，
+    # 尝试直接从文本中找
+    if not sound_ids:
+
+        try:
+
+            raw_json = json.dumps(
+                drama_data,
+                ensure_ascii=False
             )
-        )
 
-        result["追剧人数"] = clean_number(
-            first_value(
-                drama,
-                [
-                    "sub_count",
-                    "subCount",
-                    "subscribe_count",
-                    "subscribeCount",
-                    "follow_count",
-                    "followCount",
-                ],
+            sound_ids = list(
+                dict.fromkeys(
+                    re.findall(
+                        r'"sound_id"\s*:\s*(\d+)',
+                        raw_json
+                    )
+                )
             )
+
+        except Exception:
+            pass
+
+
+    if not sound_ids:
+
+        error = "没有找到 sound_id"
+
+        print("❌", error)
+
+        result["抓取错误"] = error
+
+        return result
+
+
+    print(
+        f"🔊 找到 {len(sound_ids)} 个 sound_id"
+    )
+
+    print(
+        f"   第一集 sound_id = {sound_ids[0]}"
+    )
+
+
+    # ========================================================
+    # D. 提取 sound_id + need_pay
+    # ========================================================
+
+    pairs = extract_sound_pay_pairs_from_json(
+        drama_data
+    )
+
+    # 如果结构没有正确提取，使用 fallback
+    if not pairs:
+
+        try:
+
+            raw_json = json.dumps(
+                drama_data,
+                ensure_ascii=False
+            )
+
+            pairs = extract_sound_pay_pairs_fallback(
+                raw_json
+            )
+
+        except Exception:
+            pairs = []
+
+
+    # ========================================================
+    # E. 如果 pairs 数量与 sound_ids 不一致
+    # 尝试根据独立数组恢复
+    # ========================================================
+
+    if len(pairs) != len(sound_ids):
+
+        pay_flags = recursive_find_values(
+            drama_data,
+            "need_pay"
         )
 
-        print(f"剧名：{name or '未知'}")
-        print(f"播放量：{result['播放量']}")
-        print(f"追剧人数：{result['追剧人数']}")
+        cleaned_pay_flags = []
 
-        # ----------------------------------------------------
-        # 获取声音/剧集列表
-        # ----------------------------------------------------
+        for pay in pay_flags:
 
-        sounds_url = (
-            "https://www.missevan.com/"
-            f"dramaapi/getdramabysound?drama_id={drama_id}"
-        )
+            try:
+                pay = str(int(float(pay)))
+            except Exception:
+                pay = str(pay).strip()
 
-        sounds_json = request_json(sounds_url)
+            cleaned_pay_flags.append(pay)
 
-        sound_ids = extract_sound_ids(sounds_json)
-        pay_flags = extract_pay_flags(sounds_json)
-
-        # 如果接口中没有找到 sound_id，则尝试从 drama JSON 中提取
-        if not sound_ids:
-            sound_ids = extract_sound_ids(drama_json)
-
-        print(f"检测到剧集数：{len(sound_ids)}")
-
-        # ----------------------------------------------------
-        # 判断付费集
-        # ----------------------------------------------------
-        #
-        # 这里保持与原有统计口径一致：
-        # 第一集不计入付费 ID 的范围；
-        # 第 2 集以后 need_pay != 0 的集计入。
-        #
-        # 由于不同版本接口可能存在 need_pay 长度差异，
-        # 优先按 sound_id 和 flag 的位置匹配。
-        # ----------------------------------------------------
-
-        paid_sound_ids = []
-
-        if sound_ids and pay_flags:
-            usable = min(len(sound_ids), len(pay_flags))
+        if len(cleaned_pay_flags) >= len(sound_ids):
 
             pairs = list(
                 zip(
-                    sound_ids[:usable],
-                    pay_flags[:usable]
+                    sound_ids,
+                    cleaned_pay_flags
                 )
             )
 
-            for index, (sid, pay) in enumerate(pairs):
-                if index == 0:
-                    continue
 
-                if str(pay).lower() not in {
-                    "0",
-                    "false",
-                    "none",
-                    "",
-                }:
-                    paid_sound_ids.append(sid)
+    # ========================================================
+    # F. 计算付费集
+    #
+    # 保留原始程序的业务规则：
+    #
+    # 第一集不纳入付费集统计。
+    #
+    # 即：
+    # sound_ids[0] 不参与付费集数/付费弹幕统计
+    # ========================================================
 
-        # 如果没有拿到 pay_flags，则不凭空判断
-        print(f"付费集数：{len(paid_sound_ids)}")
+    paid_sound_ids = []
 
-        result["更新集数"] = len(sound_ids)
+    if pairs:
 
-        # ----------------------------------------------------
-        # 获取总弹幕 UID
-        # ----------------------------------------------------
+        # 保证使用 sound_ids 的原始顺序
+        pair_map = {}
 
-        all_uids = set()
+        for sid, pay in pairs:
 
-        for index, sound_id in enumerate(sound_ids, start=1):
+            if sid not in pair_map:
+                pair_map[sid] = pay
+
+        ordered_pairs = []
+
+        for sid in sound_ids:
+
+            if sid in pair_map:
+
+                ordered_pairs.append(
+                    (
+                        sid,
+                        pair_map[sid]
+                    )
+                )
+
+        # 如果 API 的结构没有完全对应，
+        # fallback 到 pairs 自己
+        if not ordered_pairs:
+
+            ordered_pairs = pairs
+
+
+        # 第一集不计入
+        for index, (sid, pay) in enumerate(
+            ordered_pairs
+        ):
+
+            if index == 0:
+                continue
+
+            if str(pay) != "0":
+                paid_sound_ids.append(
+                    sid
+                )
+
+    else:
+
+        print(
+            "⚠️ 没有成功提取 need_pay，"
+            "无法判断付费集"
+        )
+
+
+    # 去重
+    paid_sound_ids = list(
+        dict.fromkeys(
+            paid_sound_ids
+        )
+    )
+
+
+    result["付费集数"] = len(
+        paid_sound_ids
+    )
+
+
+    print(
+        f"💰 付费集数：{len(paid_sound_ids)}"
+    )
+
+
+    # ========================================================
+    # G. getdramabysound
+    #
+    # 原程序这里使用：
+    #
+    # https://www.missevan.com/dramaapi/
+    # getdramabysound?sound_id=第一集sound_id
+    #
+    # 而不是 drama_id
+    # ========================================================
+
+    first_sound_id = sound_ids[0]
+
+    drama_info_url = (
+        "https://www.missevan.com/"
+        "dramaapi/getdramabysound"
+        f"?sound_id={first_sound_id}"
+    )
+
+    try:
+
+        data_info = request_json(
+            drama_info_url
+        )
+
+        if data_info.get("success"):
+
+            info = (
+                data_info
+                .get("info", {})
+                .get("drama", {})
+            )
+
+            # ----------------------------------------------
+            # 追剧人数
+            # ----------------------------------------------
+
+            result["追剧人数"] = (
+                info.get("subscription_num")
+            )
+
+            # ----------------------------------------------
+            # 播放量
+            # ----------------------------------------------
+
+            result["播放量"] = (
+                info.get("view_count")
+            )
+
+            # ----------------------------------------------
+            # 更新集数
+            # ----------------------------------------------
+
+            result["更新集数"] = (
+                info.get("newest")
+            )
+
             print(
-                f"弹幕：{index}/{len(sound_ids)}",
-                end="\r"
+                f"👥 追剧人数："
+                f"{result['追剧人数']}"
             )
 
-            dm_url = (
-                "http://www.missevan.com/"
-                f"sound/getdm?soundid={sound_id}"
+            print(
+                f"▶️ 播放量："
+                f"{result['播放量']}"
             )
 
-            try:
-                dm_json = request_json(
-                    dm_url,
-                    timeout=15,
-                    retries=2
-                )
+            print(
+                f"📚 更新集数："
+                f"{result['更新集数']}"
+            )
 
-                all_uids.update(
-                    extract_danmaku_uids(dm_json)
-                )
+        else:
 
-            except Exception as exc:
+            error = (
+                "getdramabysound 返回 "
+                "success=False"
+            )
+
+            print("⚠️", error)
+
+            errors.append(error)
+
+    except Exception as e:
+
+        error = (
+            f"getdramabysound失败: {e}"
+        )
+
+        print("❌", error)
+
+        errors.append(error)
+
+
+    # ========================================================
+    # H. 如果 newest 没有拿到
+    # 使用 sound_id 数量作为 fallback
+    # ========================================================
+
+    if result["更新集数"] is None:
+
+        result["更新集数"] = len(
+            sound_ids
+        )
+
+        print(
+            f"⚠️ newest 未获取，"
+            f"使用 sound_id 数量："
+            f"{len(sound_ids)}"
+        )
+
+
+    # ========================================================
+    # I. 没有付费集
+    # ========================================================
+
+    if not paid_sound_ids:
+
+        result["id"] = 0
+        result["总弹幕"] = 0
+
+        print(
+            "📭 没有付费集，"
+            "UID / 总弹幕 = 0"
+        )
+
+        result["抓取错误"] = (
+            "；".join(errors)
+        )
+
+        return result
+
+
+    # ========================================================
+    # J. 获取付费集弹幕
+    #
+    # 原接口：
+    #
+    # http://www.missevan.com/sound/getdm?soundid=
+    #
+    # 这里使用 HTTPS。
+    #
+    # 注意：
+    # getdm 返回的是文本，不是 JSON。
+    # ========================================================
+
+    all_uids = set()
+
+    total_dm_count = 0
+
+    successful_sounds = 0
+
+    failed_sounds = 0
+
+
+    for i, sound_id in enumerate(
+        paid_sound_ids,
+        start=1
+    ):
+
+        dm_url = (
+            "https://www.missevan.com/"
+            f"sound/getdm?soundid={sound_id}"
+        )
+
+        print(
+            f"   💬 弹幕 {i}/"
+            f"{len(paid_sound_ids)}"
+            f"  sound_id={sound_id}"
+        )
+
+        try:
+
+            sound_text = request_text(
+                dm_url,
+                timeout=30,
+                retries=3,
+            )
+
+            if not sound_text:
+
                 print(
-                    f"\n  弹幕请求失败 sound_id={sound_id}: "
-                    f"{exc}"
+                    "      ⚠️ 返回内容为空"
                 )
 
-        print()
+                failed_sounds += 1
 
-        result["总弹幕"] = len(all_uids)
+                continue
 
-        print(f"总弹幕 UID：{result['总弹幕']}")
 
-        return result
+            # ----------------------------------------------
+            # 从文本中提取：
+            #
+            # p="xxx,xxx,...,UID,..."
+            # ----------------------------------------------
 
-    except Exception as exc:
-        result["抓取错误"] = str(exc)
-        print(f"❌ drama_id={drama_id} 失败：{exc}")
-        return result
+            dms = re.findall(
+                r'p="(.+?)"',
+                sound_text
+            )
+
+
+            if not dms:
+
+                print(
+                    "      ⚠️ 未找到弹幕 p 字段"
+                )
+
+                # 调试信息：只打印少量
+                preview = (
+                    sound_text[:200]
+                    .replace("\n", " ")
+                    .replace("\r", " ")
+                )
+
+                print(
+                    f"      返回内容前200字符："
+                    f"{preview}"
+                )
+
+                continue
+
+
+            successful_sounds += 1
+
+            # 总弹幕条数
+            total_dm_count += len(dms)
+
+
+            # ----------------------------------------------
+            # UID
+            #
+            # p 字段按逗号分割：
+            #
+            # parts[6]
+            #
+            # 即原程序使用的 UID 字段
+            # ----------------------------------------------
+
+            for d in dms:
+
+                parts = d.split(",")
+
+                if len(parts) >= 7:
+
+                    uid = parts[6].strip()
+
+                    if uid:
+
+                        all_uids.add(uid)
+
+
+            print(
+                f"      弹幕：{len(dms)}"
+                f"；累计弹幕：{total_dm_count}"
+                f"；累计UID：{len(all_uids)}"
+            )
+
+
+        except Exception as e:
+
+            failed_sounds += 1
+
+            error = (
+                f"sound_id={sound_id}"
+                f"弹幕请求失败: {e}"
+            )
+
+            print(
+                f"      ❌ {error}"
+            )
+
+            errors.append(error)
+
+
+    # ========================================================
+    # K. 写入最终结果
+    # ========================================================
+
+    result["id"] = len(
+        all_uids
+    )
+
+    result["总弹幕"] = (
+        total_dm_count
+    )
+
+
+    # ========================================================
+    # L. 输出日志
+    # ========================================================
+
+    print()
+    print("📊 本剧结果")
+    print("-" * 50)
+
+    print(
+        f"   更新集数：{result['更新集数']}"
+    )
+
+    print(
+        f"   付费集数：{result['付费集数']}"
+    )
+
+    print(
+        f"   播放量：{result['播放量']}"
+    )
+
+    print(
+        f"   追剧人数：{result['追剧人数']}"
+    )
+
+    print(
+        f"   总弹幕：{result['总弹幕']}"
+    )
+
+    print(
+        f"   UID：{result['id']}"
+    )
+
+    print(
+        f"   成功获取弹幕集数："
+        f"{successful_sounds}"
+    )
+
+    print(
+        f"   失败弹幕集数："
+        f"{failed_sounds}"
+    )
+
+
+    # 如果部分弹幕接口失败，记录下来
+    if failed_sounds > 0:
+
+        errors.append(
+            f"{failed_sounds} 个付费集弹幕获取失败"
+        )
+
+
+    result["抓取错误"] = (
+        "；".join(errors)
+    )
+
+    return result
 
 
 # ============================================================
-# 主程序
+# 11. 主程序
 # ============================================================
 
 def main():
-    os.makedirs(OUTPUT_DIR, exist_ok=True)
 
-    if not os.path.exists(INPUT_FILE):
-        raise FileNotFoundError(
-            f"找不到输入文件：{INPUT_FILE}\n"
-            "请把「猫耳在播剧id（跑程序版）.xlsx」放进 data/"
-        )
+    print()
+    print("=" * 70)
+    print("🎙️ 猫耳每周数据抓取")
+    print("=" * 70)
 
-    df = pd.read_excel(INPUT_FILE)
-
-    print("\n========== Excel 列名 ==========")
-    print(df.columns.tolist())
-    print("================================\n")
-
-    print("前 3 行数据：")
-    print(df.head(3).to_string())
-    print("================================\n")
-    print("\n========== 测试 drama_id ==========")
-    for i, row in df.head(5).iterrows():
-        print(
-            f"第 {i + 1} 行："
-            f"剧名={row.get('剧名')}, "
-            f"url={row.get('url')}, "
-            f"drama_id={get_drama_id(row)}"
-        )
-
-    
-
-    rows = []
-
-    for index, row in df.iterrows():
-        drama_id = get_drama_id(row)
-
-        if not drama_id:
-            print(
-                f"\n⚠️ 第 {index + 1} 行无法识别 drama_id，"
-                "保留原行并标记错误。"
-            )
-
-            result = {
-                "更新集数": None,
-                "id": None,
-                "总弹幕": None,
-                "播放量": None,
-                "追剧人数": None,
-                "抓取错误": "无法从当前行识别 drama_id",
-            }
-        else:
-            result = fetch_one_drama(drama_id)
-
-        output_row = row.to_dict()
-        output_row.update(result)
-        rows.append(output_row)
-
-    out_df = pd.DataFrame(rows)
-
-    now = datetime.now(TZ)
-    date_str = now.strftime("%m%d")
-
-    output_path = os.path.join(
-        OUTPUT_DIR,
-        f"猫耳周数据{date_str}.xlsx"
+    print(
+        f"📅 当前北京时间："
+        f"{NOW.strftime('%Y-%m-%d %H:%M:%S')}"
     )
 
-    out_df.to_excel(
-        output_path,
+    print(
+        f"📁 输入文件："
+        f"{INPUT_FILE}"
+    )
+
+    print(
+        f"📁 输出文件："
+        f"{OUTPUT_FILE}"
+    )
+
+    print("=" * 70)
+
+
+    # ========================================================
+    # A. 检查输入文件
+    # ========================================================
+
+    if not os.path.exists(INPUT_FILE):
+
+        raise FileNotFoundError(
+            f"\n❌ 找不到输入文件：\n"
+            f"{INPUT_FILE}\n\n"
+            f"请把：\n"
+            f"猫耳在播剧id（跑程序版）.xlsx\n"
+            f"放到仓库的 data/ 目录。"
+        )
+
+
+    # ========================================================
+    # B. 读取 Excel
+    # ========================================================
+
+    print()
+    print("📖 正在读取 Excel...")
+
+    df = pd.read_excel(
+        INPUT_FILE
+    )
+
+    print(
+        f"✅ 共读取 {len(df)} 行"
+    )
+
+    print(
+        f"📋 列名："
+        f"{list(df.columns)}"
+    )
+
+
+    # ========================================================
+    # C. 检查 url 列
+    # ========================================================
+
+    if "url" not in df.columns:
+
+        raise ValueError(
+            "❌ Excel 中没有找到 url 列。"
+        )
+
+
+    # ========================================================
+    # D. 清理 url
+    #
+    # 例如：
+    #
+    # 85974.0
+    #
+    # 转成：
+    #
+    # 85974
+    # ========================================================
+
+    df["url"] = (
+        df["url"]
+        .astype(str)
+        .str.strip()
+        .str.replace(
+            r"\.0$",
+            "",
+            regex=True
+        )
+    )
+
+
+    # ========================================================
+    # E. 初始化结果列
+    # ========================================================
+
+    result_columns = [
+        "更新集数",
+        "付费集数",
+        "id",
+        "总弹幕",
+        "播放量",
+        "追剧人数",
+        "抓取错误",
+    ]
+
+    for col in result_columns:
+
+        df[col] = None
+
+
+    # ========================================================
+    # F. 循环抓取
+    # ========================================================
+
+    total = len(df)
+
+    success_count = 0
+    fail_count = 0
+
+
+    for idx, row in df.iterrows():
+
+        print()
+        print(
+            "#" * 70
+        )
+
+        print(
+            f"📌 第 {idx + 1}/{total} 行"
+        )
+
+        drama_name = row.get(
+            "剧名",
+            ""
+        )
+
+        print(
+            f"🎭 {drama_name}"
+        )
+
+
+        # ----------------------------------------------------
+        # 获取 drama_id
+        # ----------------------------------------------------
+
+        drama_id = get_drama_id(
+            row
+        )
+
+
+        if not drama_id:
+
+            print(
+                "⚠️ 无法识别 drama_id"
+            )
+
+            print(
+                f"   url = {row.get('url')}"
+            )
+
+            df.at[
+                idx,
+                "抓取错误"
+            ] = "无法识别 drama_id"
+
+            fail_count += 1
+
+            continue
+
+
+        print(
+            f"🆔 drama_id = {drama_id}"
+        )
+
+
+        # ----------------------------------------------------
+        # 抓取
+        # ----------------------------------------------------
+
+        try:
+
+            result = fetch_one_drama(
+                drama_id
+            )
+
+
+            # ------------------------------------------------
+            # 写回 DataFrame
+            # ------------------------------------------------
+
+            for col in result_columns:
+
+                df.at[
+                    idx,
+                    col
+                ] = result.get(col)
+
+
+            if result.get(
+                "抓取错误"
+            ):
+
+                fail_count += 1
+
+            else:
+
+                success_count += 1
+
+
+        except Exception as e:
+
+            error = (
+                f"{type(e).__name__}: {e}"
+            )
+
+            print(
+                f"❌ 本剧抓取异常："
+                f"{error}"
+            )
+
+            df.at[
+                idx,
+                "抓取错误"
+            ] = error
+
+            fail_count += 1
+
+
+        # ----------------------------------------------------
+        # 避免请求过快
+        # ----------------------------------------------------
+
+        time.sleep(0.5)
+
+
+    # ========================================================
+    # G. 调整列顺序
+    # ========================================================
+
+    preferred_order = [
+        "剧名",
+        "url",
+        "更新集数",
+        "付费集数",
+        "id",
+        "总弹幕",
+        "播放量",
+        "追剧人数",
+        "抓取错误",
+    ]
+
+    existing_first = [
+        col
+        for col in preferred_order
+        if col in df.columns
+    ]
+
+    remaining = [
+        col
+        for col in df.columns
+        if col not in existing_first
+    ]
+
+    df = df[
+        existing_first + remaining
+    ]
+
+
+    # ========================================================
+    # H. 保存
+    # ========================================================
+
+    print()
+    print("=" * 70)
+    print("💾 正在保存...")
+    print("=" * 70)
+
+    df.to_excel(
+        OUTPUT_FILE,
         index=False
     )
 
-    print("\n" + "=" * 70)
-    print("猫耳本周数据抓取完成")
-    print("=" * 70)
-    print(f"总数：{len(out_df)}")
-    print(
-        f"成功：{sum(out_df['抓取错误'].fillna('').eq(''))}"
-    )
-    print(
-        f"失败：{sum(out_df['抓取错误'].fillna('').ne(''))}"
-    )
-    print(f"文件：{output_path}")
 
+    # ========================================================
+    # I. 最终统计
+    # ========================================================
+
+    print()
+    print("=" * 70)
+    print("🎉 抓取完成")
+    print("=" * 70)
+
+    print(
+        f"📄 输出：{OUTPUT_FILE}"
+    )
+
+    print(
+        f"📊 总剧数：{total}"
+    )
+
+    print(
+        f"✅ 完整成功：{success_count}"
+    )
+
+    print(
+        f"⚠️ 有错误：{fail_count}"
+    )
+
+
+    # ========================================================
+    # J. 简单汇总
+    # ========================================================
+
+    numeric_columns = [
+        "更新集数",
+        "付费集数",
+        "id",
+        "总弹幕",
+        "播放量",
+        "追剧人数",
+    ]
+
+    print()
+    print("📊 数据汇总")
+    print("-" * 70)
+
+    for col in numeric_columns:
+
+        if col not in df.columns:
+            continue
+
+        numeric = pd.to_numeric(
+            df[col],
+            errors="coerce"
+        )
+
+        print(
+            f"{col:<10} "
+            f"有效：{numeric.notna().sum():>4} "
+            f"合计：{numeric.sum():,.0f}"
+        )
+
+    print()
+    print("=" * 70)
+    print("✅ 全部完成")
+    print("=" * 70)
+
+
+# ============================================================
+# 12. Entry point
+# ============================================================
 
 if __name__ == "__main__":
     main()
