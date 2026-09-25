@@ -108,8 +108,8 @@ def main():
     print(f"本周：{current_path}")
     print(f"上周：{previous_path}")
 
-    current_df = pd.read_excel(current_path)
-    previous_df = pd.read_excel(previous_path)
+    current_df = pd.read_csv(current_path)
+    previous_df = pd.read_csv(previous_path)
 
     # --------------------------------------------------------
     # 选择匹配键
