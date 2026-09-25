@@ -61,7 +61,7 @@ TZ = pytz.timezone("Asia/Shanghai")
 
 NOW = datetime.now(TZ)
 
-OUTPUT_NAME = f"猫耳周数据{NOW.strftime('%m%d')}.xlsx"
+OUTPUT_NAME = f"猫耳周数据{NOW.strftime('%m%d')}.csv"
 OUTPUT_FILE = os.path.join(OUTPUT_DIR, OUTPUT_NAME)
 
 
@@ -1395,7 +1395,7 @@ def main():
     print("💾 正在保存...")
     print("=" * 70)
 
-    df.to_excel(
+    df.to_csv(
         OUTPUT_FILE,
         index=False
     )
