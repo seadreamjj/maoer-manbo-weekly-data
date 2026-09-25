@@ -36,7 +36,7 @@ DERIVED_COLUMNS = [
 
 def file_date(path):
     name = os.path.basename(path)
-    match = re.search(r"猫耳周数据(\d{4})\.xlsx$", name)
+    match = re.search(r"猫耳周数据(\d{4})\.csv$", name)
 
     if not match:
         return None
@@ -56,7 +56,7 @@ def find_raw_files():
         if not os.path.isfile(path):
             continue
 
-        if re.fullmatch(r"猫耳周数据\d{4}\.xlsx", name):
+        if re.fullmatch(r"猫耳周数据\d{4}\.csv", name):
             paths.append(path)
 
     return sorted(
@@ -83,7 +83,7 @@ def main():
 
     current_path = os.path.join(
         OUTPUT_DIR,
-        f"猫耳周数据{current_date}.xlsx"
+        f"猫耳周数据{current_date}.csv"
     )
 
     if not os.path.exists(current_path):
@@ -295,10 +295,10 @@ def main():
 
     output_path = os.path.join(
         OUTPUT_DIR,
-        f"猫耳周数据对比版{current_date}.xlsx"
+        f"猫耳周数据对比版{current_date}.csv"
     )
 
-    compare_df.to_excel(
+    compare_df.to_csv(
         output_path,
         index=False
     )
