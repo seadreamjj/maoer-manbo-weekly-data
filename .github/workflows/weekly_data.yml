@@ -4,7 +4,7 @@ on:
   schedule:
     # GitHub Actions 使用 UTC
     # 周四 20:00 UTC = 周五 04:00 北京时间
-    - cron: '0 20 * * 4'
+    - cron: '0 20 * * 1'
 
   workflow_dispatch:
 
