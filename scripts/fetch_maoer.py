@@ -1249,10 +1249,21 @@ def main():
             f"📌 第 {idx + 1}/{total} 行"
         )
 
-        drama_name = row.get(
-            "剧名",
-            ""
-        )
+        drama_name_raw = df.at[idx, "剧名"] if "剧名" in df.columns else ""
+        url_raw = df.at[idx, "url"] if "url" in df.columns else ""
+
+        drama_name = "" if pd.isna(drama_name_raw) else str(drama_name_raw).strip()
+        url_value = "" if pd.isna(url_raw) else str(url_raw).strip()
+
+    # ============================================================
+    # 空行：保留作为分隔，不抓取、不报错
+    # ============================================================
+        if not drama_name and not url_value:
+            print(f"[{idx + 1}/{len(df)}] 空行，跳过抓取")
+            continue
+
+
+        
 
         print(
             f"🎭 {drama_name}"
