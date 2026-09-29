@@ -411,10 +411,10 @@ def main():
 
     output_path = os.path.join(
         OUTPUT_DIR,
-        f"漫播周数据{date_str}.xlsx"
+        f"漫播周数据{date_str}.csv"
     )
 
-    df.to_excel(
+    df.to_csv(
         output_path,
         index=False
     )
