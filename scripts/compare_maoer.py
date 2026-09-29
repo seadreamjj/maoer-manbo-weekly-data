@@ -63,7 +63,7 @@ def file_date(path):
     name = os.path.basename(path)
 
     match = re.fullmatch(
-        r"猫耳周数据(\d{4})\.xlsx",
+        r"猫耳周数据(\d{4})\.csv",
         name
     )
 
@@ -107,7 +107,7 @@ def find_raw_files():
             continue
 
         if re.fullmatch(
-            r"猫耳周数据\d{4}\.xlsx",
+            r"猫耳周数据\d{4}\.csv",
             name
         ):
             paths.append(path)
