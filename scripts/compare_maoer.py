@@ -788,6 +788,17 @@ def main():
         preferred + remaining
     ]
 
+    # 整数型字段去掉 .0
+    for col in compare_df.columns:
+        if (
+            col.endswith("2")
+            or col.endswith("周增")
+        ):
+            compare_df[col] = pd.to_numeric(
+                compare_df[col],
+                errors="coerce"
+            ).round().astype("Int64")
+
 
     # ========================================================
     # 28. 输出文件
