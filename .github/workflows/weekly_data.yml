@@ -4,7 +4,7 @@ on:
   schedule:
     # 每周五北京时间 04:00
     # UTC = 周四 20:00
-    - cron: '7 19 * * 2'
+    - cron: '7 19 * * 4'
 
   # GitHub Actions 页面手动运行
   workflow_dispatch:
