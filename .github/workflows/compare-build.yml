@@ -1,0 +1,59 @@
+name: Weekly Compare and Build
+
+on:
+  workflow_dispatch:
+
+  repository_dispatch:
+    types:
+      - compare-build
+
+permissions:
+  contents: write
+
+concurrency:
+  group: compare-build
+  cancel-in-progress: false
+
+jobs:
+  compare:
+    name: 数据比较
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          if [ -f requirements.txt ]; then
+            pip install -r requirements.txt
+          fi
+
+      - name: Run compare
+        run: |
+          python scripts/compare.py
+
+      - name: Run build
+        run: |
+          python scripts/build.py
+
+      - name: Commit comparison results
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add output/ data/
+
+          if git diff --cached --quiet; then
+            echo "没有新的比较结果需要提交"
+          else
+            git commit -m "data: update weekly comparison"
+            git push
+          fi
