@@ -53,5 +53,6 @@ jobs:
             echo "没有新的猫耳数据需要提交"
           else
             git commit -m "data: update maoer weekly data"
+            git pull --rebase origin main
             git push
           fi
