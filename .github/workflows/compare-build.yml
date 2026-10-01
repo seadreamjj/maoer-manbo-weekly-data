@@ -1,4 +1,4 @@
-name: Weekly Compare and Build
+name: Weekly Compare
 
 on:
   workflow_dispatch:
@@ -11,12 +11,12 @@ permissions:
   contents: write
 
 concurrency:
-  group: compare-build
+  group: weekly-compare
   cancel-in-progress: false
 
 jobs:
   compare:
-    name: 数据比较
+    name: 猫耳 + 漫播周数据比较
     runs-on: ubuntu-latest
 
     steps:
@@ -36,24 +36,25 @@ jobs:
             pip install -r requirements.txt
           fi
 
-      - name: Run compare
+      - name: Run Maoer compare
         run: |
-          python scripts/compare.py
+          python scripts/compare_maoer.py
 
-      - name: Run build
+      - name: Run Manbo compare
         run: |
-          python scripts/build.py
+          python scripts/compare_manbo.py
 
       - name: Commit comparison results
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          git add output/ data/
+          git add data/ output/
 
           if git diff --cached --quiet; then
             echo "没有新的比较结果需要提交"
           else
             git commit -m "data: update weekly comparison"
+            git pull --rebase origin main
             git push
           fi
