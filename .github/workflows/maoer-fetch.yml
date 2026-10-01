@@ -38,7 +38,7 @@ jobs:
 
       - name: Run Maoer fetch
         env:
-          MAOER_COOKIE: ${{ secrets.MAOER_COOKIE }}
+          MISSEVAN_COOKIE: ${{ secrets.MISSEVAN_COOKIE }}
         run: |
           python scripts/fetch_maoer.py
 
