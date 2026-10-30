@@ -1,337 +1,97 @@
-﻿剧名,url,更新集数,付费集数,id,id2,总弹幕,总弹幕2,追剧人数,追剧人数2,播放量,播放量2,ID周增,总弹幕周增,追剧周增,播放周增,追剧周增率,播放周增率,比例差,本周ID活跃比,抓取错误
-回信,85974,Episode04,0,29935,0,510935,0,589004,98573,57830290,2262966,-29935,-510935,-490431,-55567324,-0.8326446000366721,-0.9608688457208152,1.1539963697338527,0.0,
-情蛊,86178,Episode02,0,34935,0,466080,0,465067,76820,43932710,2820247,-34935,-466080,-388247,-41112463,-0.8348194991259323,-0.9358053031556669,1.1209672320010111,0.0,
-失忆后死对头成了我男朋友？,86693,Episode05,0,5105,0,85210,0,108428,9227,5879998,3149511,-5105,-85210,-99201,-2730487,-0.9149020548197883,-0.46436869536350184,0.5075611022154392,0.0,
-奇洛李维斯回信 番外篇,93420,Episode02,0,4298,0,24108,0,81186,37590,1374863,9524456,-4298,-24108,-43596,8149593,-0.5369891360579411,5.9275673285265515,-11.03852374377825,0.0,
-,,,,,,,,,,,,,,,,,,,,无法识别 drama_id
-一屋暗灯,93038,Episode04,0,16951,0,280431,0,217245,60254,14114372,9086936,-16951,-280431,-156991,-5027436,-0.7226449400446501,-0.3561926807653929,0.49290136971468285,0.0,
-洄天 1,86815,Episode05,0,11584,0,192572,0,251097,70970,28949432,5312298,-11584,-192572,-180127,-23637134,-0.7173602233399842,-0.8164973323138084,1.1381971089953218,0.0,
-惊封4,86834,,0,10091,0,146657,0,151195,,8766861,,-10091,-146657,,,,,,,getdramabysound 返回 success=False
-一颗苹果,90818,Episode05,0,6374,0,120236,0,171660,17947,14482434,7082110,-6374,-120236,-153713,-7400324,-0.8954503087498543,-0.5109862057717646,0.5706471936842109,0.0,
-于是麦麦（注意限免）,86179,Episode04,0,6575,0,114250,0,116654,45413,6372933,2919696,-6575,-114250,-71241,-3453237,-0.6107034478029043,-0.5418599254064024,0.8872717639892542,0.0,
-再世3上,86827,Episode03,0,3357,0,61326,0,54843,49496,3232103,4302631,-3357,-61326,-5347,1070528,-0.09749648998048976,0.33121716727468153,-3.397221452187275,0.0,
-再世权臣3下,93437,Episode02,0,2406,0,44815,0,29723,74785,1101885,2199503,-2406,-44815,45062,1097618,1.5160650001682199,0.9961275450704928,0.6570480454070006,0.0,
-沉醉不醒,86740,Episode04,0,3267,0,74435,0,58622,48065,4484127,9151008,-3267,-74435,-10557,4666881,-0.1800859745488042,1.0407557591477672,-5.779216075851132,0.0,
-太傅2,86723,Episode05,0,3059,0,80020,0,47703,14824,4070102,7878695,-3059,-80020,-32879,3808593,-0.6892438630694087,0.9357487846741924,-1.3576454355458802,0.0,
-蜉蝣,93202,Episode04,0,2456,0,41542,0,31138,3885,1523388,6961844,-2456,-41542,-27253,5438456,-0.8752328344787719,3.5699742941391164,-4.078885244593396,0.0,
-降水概率百分百,93005,Episode02,0,1993,0,49766,0,32894,30423,2486193,465574,-1993,-49766,-2471,-2020619,-0.07512008268985225,-0.8127361793714325,10.819159807464144,0.0,
-触礁,95034,Episode03,0,1200,0,13959,0,15818,47285,846406,2174706,-1200,-13959,31467,1328300,1.9893159691490707,1.569341427163796,0.7888849491491697,0.0,
-难言之欲,94857,Episode05,0,654,0,21000,0,13373,38763,424550,8183224,-654,-21000,25390,7758674,1.8986016600613176,18.27505358615004,9.625533344134876,0.0,
-娑婆,93178,Episode04,0,1684,0,60392,0,43294,43765,2579215,3758595,-1684,-60392,471,1179380,0.010879105649743613,0.45726315952722046,42.03131895662735,0.0,
-,,,,,,,,,,,,,,,,,,,,无法识别 drama_id
-天官4,91718,Episode04,0,10586,0,199617,0,148731,10034,18675650,343342,-10586,-199617,-138697,-18332308,-0.9325359205545583,-0.9816155260994932,1.0526302574122275,0.0,
-恒星时刻 第一季,94789,Episode02,0,3698,0,52027,0,78341,87761,3181651,1870520,-3698,-52027,9420,-1311131,0.12024355063121482,-0.4120913953164568,-3.4271392781832843,0.0,
-你的雪人能活多久 1,93787,Episode04,0,2277,0,54201,0,69250,6245,2534236,5600641,-2277,-54201,-63005,3066405,-0.9098194945848376,1.2099918871012803,-1.3299252151696477,0.0,
-伏特加与曼特宁,92988,Episode04,0,2250,0,42481,0,71384,81274,2772098,7988,-2250,-42481,9890,-2764110,0.13854645298666368,-0.9971184279920839,-7.196997155084623,0.0,
-满城衣冠,90878,Episode04,0,2226,0,63427,0,61864,12006,3461660,7660295,-2226,-63427,-49858,4198635,-0.8059291348765033,1.2128964138592466,-1.5049665800270455,0.0,
-宋玉章1,86589,Episode02,0,1923,0,92888,0,51373,29341,6662419,2332960,-1923,-92888,-22032,-4329459,-0.4288634107410507,-0.6498328910265175,1.5152444222360788,0.0,
-沉浮事（广播剧版）,94775,Episode04,0,1606,0,31928,0,21230,97411,1612336,2818019,-1606,-31928,76181,1205683,3.588365520489873,0.7477864415357593,0.20839193701584607,0.0,
-旧故新长,86778,Episode03,0,1401,0,7032,0,154449,14465,3433911,7322440,-1401,-7032,-139984,3888529,-0.9063444891193857,1.132390734646297,-1.2494043360340175,0.0,
-炽火难熄,94917,Episode03,12,1086,535,23877,4463,24519,71098,692069,8103867,-551,-19414,46579,7411798,1.8997104286471715,10.709622884423373,5.637502812494401,0.007524824889589018,"sound_id=13459644弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=13459644
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=13459644；sound_id=13524141弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=13524141
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=13524141；sound_id=13557454弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=13557454
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=13557454；sound_id=13589209弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=13589209
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=13589209；sound_id=13622244弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=13622244
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=13622244；sound_id=13653017弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=13653017
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=13653017；sound_id=13682655弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=13682655
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=13682655；sound_id=13703892弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=13703892
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=13703892；sound_id=13739361弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=13739361
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=13739361；sound_id=13796966弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=13796966
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=13796966；10 个付费集弹幕获取失败"
-悬日 下季,96485,Episode05,0,936,0,8295,0,18923,88264,567371,2430141,-936,-8295,69341,1862770,3.664376684458067,3.2831604012189555,0.8959669498891896,0.0,
-绰约,86680,Episode04,0,852,0,15211,0,33938,10983,2665734,2845486,-852,-15211,-22955,179752,-0.6763804584831162,0.06743058384670038,-0.09969327617465988,0.0,
-大王万万不可1,94259,,0,772,0,28164,0,18914,,780790,,-772,-28164,,,,,,,getdramabysound 返回 success=False
-沙子，时间，雨树,94825,Episode05,0,691,0,7629,0,12198,20148,393071,7545523,-691,-7629,7950,7152452,0.6517461878996557,18.196336030895182,27.919359359101815,0.0,
-清白之年,94838,Episode02,0,636,0,17921,0,17184,92490,802755,2685969,-636,-17921,75306,1883214,4.382332402234637,2.3459386736924714,0.5353173740303752,0.0,
-解瘾,94782,Episode04,0,531,0,14930,0,16267,31687,905441,906422,-531,-14930,15420,981,0.9479313948484662,0.0010834499431768608,0.001142962401145136,0.0,
-二哈在狼群里疯狂造谣 第一季,94772,Episode05,0,474,0,5848,0,15214,17246,595622,813723,-474,-5848,2032,218101,0.1335611936374392,0.3661735127312289,2.7416160544748602,0.0,
-传闻,95625,Episode02,0,383,0,9044,0,12696,24077,336113,6712092,-383,-9044,11381,6375979,0.8964240705734089,18.96974826918328,21.161578422419026,0.0,
-合笼蛊,94418,Episode04,0,356,0,12823,0,10565,55731,754921,3811368,-356,-12823,45166,3056447,4.275059157595836,4.048697810764305,0.94705071006343,0.0,
-愚蠢的有钱人（广播剧版）,94873,Episode04,0,283,0,10024,0,8477,52731,257970,5689843,-283,-10024,44254,5431873,5.220478943022296,21.056219715470792,4.033388496588916,0.0,
-干涸地,86725,Episode03,0,172,0,4444,0,97100,65910,2455179,19407,-172,-4444,-31190,-2435772,-0.3212152420185376,-0.9920954846876745,3.088569142775672,0.0,
-我在霸总文学里当家庭医生 上,91680,Episode03,0,98,0,7047,0,8720,78963,123351,47358,-98,-7047,70243,-75993,8.055389908256881,-0.6160712114210667,-0.07647937820981025,0.0,
-请与我同眠,93966,Episode03,0,41,0,523,0,6621,16812,94212,9063125,-41,-523,10191,8968913,1.539193475305845,95.19926336347811,61.850095449866416,0.0,
-,,,,,,,,,,,,,,,,,,,,无法识别 drama_id
-囚于永夜,86822,Episode03,0,0,0,0,0,328937,6958,5614170,3186175,0,0,-321979,-2427995,-0.9788470132578578,-0.4324762164309239,0.4418220728809606,0.0,
-唇枪 上季,94802,Episode02,0,0,0,0,0,27464,69760,721788,1682245,0,0,42296,960457,1.5400524322749782,1.3306635743459299,0.8640378382314312,0.0,
-金嘉轩去了哪里 第一季,94831,Episode02,0,0,0,0,0,10281,18991,103023,5045452,0,0,8710,4942429,0.8471938527380605,47.97403492424022,56.62698657360663,0.0,
-高门深户,94861,Episode03,0,0,0,0,0,4996,70617,62137,6444755,0,0,65621,6382618,13.134707766212971,102.71847691391602,7.820385405006392,0.0,
-六重奏 第一季,94859,Episode03,0,0,0,0,0,4771,51734,210379,493626,0,0,46963,283247,9.84342905051352,1.3463653691670747,0.13677808437059202,0.0,
-纯白恶魔 第一季,94773,Episode04,0,0,0,0,0,4525,11919,175130,3938753,0,0,7394,3763623,1.6340331491712707,21.49045280648661,13.151785089173911,0.0,
-祝祷月亮,94827,Episode05,0,0,0,0,0,3414,65358,18483,3060949,0,0,61944,3042466,18.144112478031634,164.6088838392036,9.072302877228482,0.0,
-此湖之东,94819,Episode03,0,0,0,0,0,2339,58677,10409,4063924,0,0,56338,4053515,24.08636169303121,389.4240561052935,16.167823977249483,0.0,
-耳机专属小剧场,95972,Episode03,0,0,0,0,0,859,85061,16040,6070365,0,0,84202,6054325,98.023282887078,377.45168329177056,3.8506329534646553,0.0,
-什刹海是海吗,94863,,0,0,0,0,0,9993,,282749,,0,0,,,,,,,getdramabysound 返回 success=False
-屏香记,94783,Episode05,0,,0,,0,,538,,2971426,,,,,,,,0.0,
-热的汤，软的面包,86816,Episode02,0,0,0,0,0,9034,2616,85263,4071465,0,0,-6418,3986202,-0.7104272747398716,46.75183842933043,-65.80805677322704,0.0,
-白木楠,96863,Episode05,0,,0,,0,,14991,,184479,,,,,,,,0.0,
-,,,,,,,,,,,,,,,,,,,,无法识别 drama_id
-r361,85562,Episode04,256,6513,2430,303230,28478,66154,17428,30110856,8235578,-4083,-274752,-48726,-21875278,-0.7365541010369744,-0.7264914023035413,0.9863381403765642,0.13943080100986918,"sound_id=11278604弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=11278604
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=11278604；sound_id=11284755弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=11284755
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=11284755；sound_id=11289795弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=11289795
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=11289795；sound_id=11296221弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=11296221
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=11296221；sound_id=11303001弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=11303001
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=11303001；sound_id=11308843弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=11308843
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=11308843；sound_id=11314776弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=11314776
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=11314776；sound_id=11321607弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=11321607
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=11321607；sound_id=11328407弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=11328407
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=11328407；sound_id=11333012弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=11333012
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=11333012；sound_id=11339491弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=11339491
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=11339491；sound_id=11344777弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=11344777
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=11344777；sound_id=11352016弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=11352016
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=11352016；sound_id=11367109弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=11367109
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=11367109；sound_id=11375012弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=11375012
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=11375012；sound_id=11380626弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=11380626
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=11380626；sound_id=11385296弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=11385296
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=11385296；sound_id=11391851弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=11391851
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=11391851；sound_id=11400259弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=11400259
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=11400259；sound_id=11405887弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=11405887
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=11405887；sound_id=11416397弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=11416397
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=11416397；sound_id=11422456弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=11422456
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=11422456；sound_id=11427092弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=11427092
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=11427092；sound_id=11433520弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=11433520
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=11433520；sound_id=11438431弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=11438431
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=11438431；sound_id=11444511弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=11444511
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=11444511；sound_id=11453582弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=11453582
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=11453582；sound_id=11459541弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=11459541
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=11459541；sound_id=11464504弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=11464504
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=11464504；sound_id=11468104弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=11468104
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=11468104；sound_id=11473967弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=11473967
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=11473967；sound_id=11479031弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=11479031
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=11479031；sound_id=11483469弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=11483469
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=11483469；sound_id=11494295弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=11494295
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=11494295；sound_id=11500356弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=11500356
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=11500356；sound_id=11505254弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=11505254
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=11505254；sound_id=11510921弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=11510921
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=11510921；sound_id=11522775弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=11522775
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=11522775；sound_id=11527879弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=11527879
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=11527879；sound_id=11527902弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=11527902
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=11527902；sound_id=11532702弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=11532702
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=11532702；sound_id=11536856弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=11536856
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=11536856；sound_id=11541251弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=11541251
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=11541251；sound_id=11544796弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=11544796
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=11544796；sound_id=11550316弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=11550316
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=11550316；sound_id=11553813弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=11553813
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=11553813；sound_id=11558715弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=11558715
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=11558715；sound_id=11563676弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=11563676
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=11563676；sound_id=11568096弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=11568096
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=11568096；sound_id=11571962弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=11571962
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=11571962；sound_id=11577234弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=11577234
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=11577234；sound_id=11581892弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=11581892
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=11581892；sound_id=11586920弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=11586920
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=11586920；sound_id=11591272弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=11591272
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=11591272；sound_id=11595569弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=11595569
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=11595569；sound_id=11600515弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=11600515
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=11600515；sound_id=11604313弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=11604313
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=11604313；sound_id=11609556弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=11609556
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=11609556；sound_id=11613899弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=11613899
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=11613899；sound_id=11622186弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=11622186
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=11622186；sound_id=11626127弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=11626127
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=11626127；sound_id=11630427弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=11630427
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=11630427；sound_id=11637783弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=11637783
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=11637783；sound_id=11643222弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=11643222
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=11643222；sound_id=11648215弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=11648215
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=11648215；sound_id=11651842弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=11651842
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=11651842；sound_id=11656119弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=11656119
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=11656119；sound_id=11662581弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=11662581
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=11662581；sound_id=11666207弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=11666207
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=11666207；sound_id=11670465弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=11670465
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=11670465；sound_id=11674876弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=11674876
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=11674876；sound_id=11674884弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=11674884
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=11674884；sound_id=11678736弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=11678736
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=11678736；sound_id=11678740弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=11678740
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=11678740；sound_id=11682202弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=11682202
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=11682202；sound_id=11684681弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=11684681
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=11684681；sound_id=11684682弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=11684682
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=11684682；sound_id=11689186弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=11689186
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=11689186；sound_id=11692464弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=11692464
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=11692464；sound_id=11692465弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=11692465
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=11692465；sound_id=11696253弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=11696253
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=11696253；sound_id=11696254弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=11696254
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=11696254；sound_id=11699827弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=11699827
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=11699827；sound_id=11699828弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=11699828
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=11699828；sound_id=11703453弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=11703453
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=11703453；sound_id=11708023弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=11708023
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=11708023；sound_id=11712142弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=11712142
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=11712142；sound_id=11717104弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=11717104
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=11717104；sound_id=11720851弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=11720851
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=11720851；sound_id=11724392弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=11724392
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=11724392；sound_id=11728002弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=11728002
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=11728002；sound_id=12067723弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12067723
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12067723；sound_id=12096830弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12096830
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12096830；sound_id=12100594弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12100594
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12100594；sound_id=12106517弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12106517
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12106517；sound_id=12111445弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12111445
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12111445；sound_id=12118900弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12118900
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12118900；sound_id=12123072弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12123072
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12123072；sound_id=12129410弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12129410
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12129410；sound_id=12141198弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12141198
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12141198；sound_id=12147683弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12147683
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12147683；sound_id=12154927弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12154927
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12154927；sound_id=12165326弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12165326
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12165326；sound_id=12170505弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12170505
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12170505；sound_id=12180429弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12180429
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12180429；sound_id=12185120弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12185120
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12185120；sound_id=12190739弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12190739
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12190739；sound_id=12195634弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12195634
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12195634；sound_id=12201979弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12201979
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12201979；sound_id=12207571弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12207571
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12207571；sound_id=12217073弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12217073
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12217073；sound_id=12221417弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12221417
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12221417；sound_id=12227059弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12227059
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12227059；sound_id=12231522弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12231522
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12231522；sound_id=12247422弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12247422
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12247422；sound_id=12252465弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12252465
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12252465；sound_id=12258031弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12258031
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12258031；sound_id=12262207弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12262207
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12262207；sound_id=12265875弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12265875
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12265875；sound_id=12268843弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12268843
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12268843；sound_id=12272822弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12272822
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12272822；sound_id=12277849弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12277849
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12277849；sound_id=12281872弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12281872
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12281872；sound_id=12285706弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12285706
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12285706；sound_id=12289301弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12289301
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12289301；sound_id=12297400弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12297400
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12297400；sound_id=12300262弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12300262
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12300262；sound_id=12300263弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12300263
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12300263；sound_id=12302706弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12302706
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12302706；sound_id=12302707弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12302707
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12302707；sound_id=12308008弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12308008
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12308008；sound_id=12310481弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12310481
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12310481；sound_id=12314165弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12314165
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12314165；sound_id=12317764弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12317764
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12317764；sound_id=12321808弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12321808
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12321808；sound_id=12326265弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12326265
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12326265；sound_id=12331083弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12331083
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12331083；sound_id=12335060弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12335060
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12335060；sound_id=12339935弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12339935
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12339935；sound_id=12344763弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12344763
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12344763；sound_id=12349172弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12349172
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12349172；sound_id=12353413弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12353413
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12353413；sound_id=12358114弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12358114
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12358114；sound_id=12363667弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12363667
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12363667；sound_id=12369340弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12369340
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12369340；sound_id=12373773弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12373773
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12373773；sound_id=12377723弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12377723
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12377723；sound_id=12381823弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12381823
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12381823；sound_id=12385761弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12385761
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12385761；sound_id=12390027弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12390027
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12390027；sound_id=12394240弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12394240
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12394240；sound_id=12398560弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12398560
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12398560；sound_id=12403315弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12403315
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12403315；sound_id=12407307弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12407307
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12407307；sound_id=12412041弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12412041
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12412041；sound_id=12416144弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12416144
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12416144；sound_id=12420627弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12420627
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12420627；sound_id=12424990弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12424990
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12424990；sound_id=12429442弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12429442
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12429442；sound_id=12435055弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12435055
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12435055；sound_id=12444384弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12444384
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12444384；sound_id=12448040弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12448040
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12448040；sound_id=12453402弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12453402
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12453402；sound_id=12457911弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12457911
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12457911；sound_id=12467679弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12467679
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12467679；sound_id=12472153弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12472153
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12472153；sound_id=12482911弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12482911
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12482911；sound_id=12487222弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12487222
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12487222；sound_id=12491245弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12491245
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12491245；sound_id=12496314弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12496314
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12496314；sound_id=12501912弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12501912
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12501912；sound_id=12507585弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12507585
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12507585；sound_id=12511696弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12511696
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12511696；sound_id=12515680弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12515680
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12515680；sound_id=12520276弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12520276
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12520276；sound_id=12524728弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12524728
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12524728；sound_id=12530977弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12530977
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12530977；sound_id=12542034弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12542034
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12542034；sound_id=12547621弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12547621
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12547621；sound_id=12552601弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12552601
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12552601；sound_id=12559029弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12559029
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12559029；sound_id=12563596弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12563596
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12563596；sound_id=12569351弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12569351
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12569351；sound_id=12574010弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12574010
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12574010；sound_id=12580129弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12580129
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12580129；sound_id=12592370弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12592370
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12592370；sound_id=12597553弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12597553
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12597553；sound_id=12602223弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12602223
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12602223；sound_id=12607975弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12607975
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12607975；sound_id=12612473弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12612473
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12612473；sound_id=12617056弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12617056
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12617056；sound_id=12621875弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12621875
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12621875；sound_id=12633255弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12633255
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12633255；sound_id=12639800弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12639800
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12639800；sound_id=12644778弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12644778
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12644778；sound_id=12651529弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12651529
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12651529；sound_id=12651540弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12651540
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12651540；sound_id=12656023弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12656023
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12656023；sound_id=12656024弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12656024
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12656024；sound_id=12660933弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12660933
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12660933；sound_id=12660934弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12660934
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12660934；sound_id=12665495弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12665495
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12665495；sound_id=12670552弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12670552
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12670552；sound_id=12675408弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12675408
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12675408；sound_id=12680723弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12680723
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12680723；sound_id=12692135弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12692135
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12692135；sound_id=12706527弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12706527
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12706527；sound_id=12713232弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12713232
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12713232；sound_id=12717379弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12717379
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12717379；sound_id=12723764弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12723764
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12723764；sound_id=12729854弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12729854
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12729854；sound_id=12734606弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12734606
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12734606；sound_id=12739423弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12739423
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12739423；sound_id=12745829弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12745829
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12745829；sound_id=12756995弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12756995
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12756995；sound_id=12769043弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12769043
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12769043；sound_id=12774276弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12774276
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12774276；sound_id=12779916弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12779916
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12779916；sound_id=12783285弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12783285
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12783285；sound_id=12788222弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12788222
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12788222；sound_id=12794330弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12794330
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12794330；sound_id=12799758弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12799758
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12799758；sound_id=12805475弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12805475
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12805475；sound_id=12810726弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12810726
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12810726；sound_id=12816310弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12816310
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12816310；sound_id=12822399弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12822399
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12822399；sound_id=12822418弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12822418
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12822418；sound_id=12545252弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12545252
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12545252；sound_id=12440781弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=12440781
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=12440781；sound_id=13704171弹幕请求失败: 请求失败：http://www.missevan.com/sound/getdm?soundid=13704171
-最后错误：412 Client Error: Precondition Failed for url: https://www.missevan.com/sound/getdm?soundid=13704171；230 个付费集弹幕获取失败"
-理想型,93439,Episode05,0,1386,0,41085,0,19542,75347,1962054,8000066,-1386,-41085,55805,6038012,2.855644253402927,3.0773933846876793,1.077652925787414,0.0,
-赤霞珠,95114,Episode04,0,1146,0,13943,0,16444,61404,504185,9035187,-1146,-13943,44960,8531002,2.734127949404038,16.92038041591876,6.188583975964593,0.0,
-舍舟,93775,Episode05,0,72,0,15268,0,2268,51210,105746,2487302,-72,-15268,48942,2381556,21.57936507936508,22.52147598963554,1.0436579531791388,0.0,
-,,,,,,,,,,,,,,,,,,,,无法识别 drama_id
-尾钩（有声）,95503,Episode03,0,2693,0,50758,0,32808,26053,2231616,8848840,-2693,-50758,-6755,6617224,-0.20589490368202878,2.9652162379190683,-14.401600937623803,0.0,
-谁来言说夜晚 上,94321,Episode03,0,1224,0,46068,0,18715,31359,3058675,6294030,-1224,-46068,12644,3235355,0.6756078012289607,1.057763574096627,1.565647365487059,0.0,
-风月禁忌,96513,Episode05,0,864,0,7519,0,13890,87853,404207,4603143,-864,-7519,73963,4198936,5.324910007199424,10.388083333539498,1.9508467409767536,0.0,
-恋爱法则,96486,Episode03,0,0,0,0,0,4680,58568,39807,9318675,0,0,53888,9278868,11.514529914529914,233.09639008214634,20.243674019901366,0.0,
-林子淙的好天气,96289,Episode02,0,0,0,0,0,1078,26226,4247,9870291,0,0,25148,9866044,23.32838589981447,2323.061926065458,99.58091125729933,0.0,
-全靠总裁当鹊桥,96914,Episode05,0,,0,,0,,12492,,6619915,,,,,,,,0.0,
-谁来言说夜晚 下,96772,Episode03,0,,0,,0,,2155,,5688858,,,,,,,,0.0,
-,,,,,,,,,,,,,,,,,,,,无法识别 drama_id
-灯花笑 上季,94733,Episode05,0,2993,0,140832,0,71979,22767,5456054,9883733,-2993,-140832,-49212,4427679,-0.6836994123285959,0.8115167115281484,-1.1869495525295577,0.0,
-嫡谋 1,94462,Episode05,0,79,0,12985,0,11679,39021,512958,1359042,-79,-12985,27342,846084,2.3411250963267403,1.6494215900717017,0.7045422701502233,0.0,
-,,,,,,,,,,,,,,,,,,,,无法识别 drama_id
-灯花笑 下季,96416,Episode03,0,797,0,16675,0,19248,39169,799423,4354077,-797,-16675,19921,3554654,1.0349646716541978,4.446524555835897,4.296305639813731,0.0,
-全职高手4上,96092,Episode02,0,497,0,6346,0,12518,77062,371634,3535963,-497,-6346,64544,3164329,5.156095222879054,8.514638057874144,1.6513733144594158,0.0,
-是心跳说谎,95516,Episode02,0,269,0,12212,0,10308,45120,309067,7883510,-269,-12212,34812,7574443,3.377182770663562,24.507446605428598,7.256772366102435,0.0,
-乘鸾 第一季,94849,Episode02,0,106,0,373,0,6922,81392,234176,621981,-106,-373,74470,387805,10.758451314648946,1.6560407556709484,0.15392928844842627,0.0,
-金陵春 1,94497,,0,45,0,8401,0,6767,,211956,,-45,-8401,,,,,,,getdramabysound 返回 success=False
-赛博BOSS,95678,Episode05,0,50,0,3333,0,6268,4837,173115,3527792,-50,-3333,-1431,3354677,-0.22830248883216336,19.37831499292378,-84.87999886488208,0.0,
-任东西,94860,Episode03,0,19,0,4643,0,3727,52201,122372,8352965,-19,-4643,48474,8230593,13.006171183257312,67.25879286111201,5.171298448515998,0.0,
-我花开后百花杀 第一季,94893,Episode03,0,9,0,5294,0,6062,7538,217242,2556144,-9,-5294,1476,2338902,0.24348399868030354,10.766343524732786,44.21786886648384,0.0,
-尚公主 第一季,95847,Episode04,0,0,0,0,0,6063,41234,230984,7359483,0,0,35171,7128499,5.80092363516411,30.86144061926367,5.320090826948214,0.0,
-大唐辟珠记 第一季,94834,Episode03,0,,0,,0,,42406,,9118012,,,,,,,,0.0,
-,,,,,,,,,,,,,,,,,,,,无法识别 drama_id
-放学后别来我办公室,86868,Episode04,0,587,0,7650,0,21645,9999,957090,6808600,-587,-7650,-11646,5851510,-0.5380457380457381,6.11385554127616,-11.363077725478488,0.0,
-凶祟 第二季,94840,Episode04,0,252,0,2520,0,8891,4095,141005,5831647,-252,-2520,-4796,5690642,-0.5394218873017659,40.35773199531931,-74.81663785871226,0.0,
-茱丽叶塔,95106,Episode05,0,157,0,6131,0,6954,65957,130199,3062573,-157,-6131,59003,2932374,8.48475697440322,22.522246714644506,2.6544362770306242,0.0,
-最红谐星 下,94605,Episode04,0,126,0,10409,0,3856,58743,76082,435751,-126,-10409,54887,359669,14.234180497925312,4.727386241160853,0.33211509730749084,0.0,
-,,,,,,,,,,,,,,,,,,,,无法识别 drama_id
-沉入地球,93569,Episode04,0,1082,0,23039,0,14616,84882,971464,2258576,-1082,-23039,70266,1287112,4.807471264367816,1.3249199146854644,0.2755960133356495,0.0,
-玫瑰美人,94009,Episode04,0,251,0,11638,0,8920,70894,183551,3700389,-251,-11638,61974,3516838,6.947757847533632,19.160004576384765,2.7577248656106126,0.0,
-,,,,,,,,,,,,,,,,,,,,无法识别 drama_id
-楚乌 第一季,94336,Episode03,0,171,0,1593,0,9495,74554,628709,1106620,-171,-1593,65059,477911,6.851922064244339,0.7601465860994514,0.11093917574838671,0.0,
-错登科 1,94787,Episode05,0,140,0,1676,0,6373,68249,209246,894738,-140,-1676,61876,685492,9.709085203201004,3.276010055150397,0.33741696427489626,0.0,
-,,,,,,,,,,,,,,,,,,,,无法识别 drama_id
-守寡后我重生了2 ,95212,Episode03,0,220,0,8889,0,5797,29219,296154,547888,-220,-8889,23422,251734,4.040365706399862,0.8500104675270299,0.21037958672419915,0.0,
+﻿剧名,url,更新集数,付费集数,id,id2,总弹幕,总弹幕2,追剧人数,追剧人数2,播放量,播放量2,ID周增,总弹幕周增,追剧周增,播放周增,追剧周增率,播放周增率,比例差,本周ID活跃比
+奇洛李维斯回信,85974,花絮11 · 小花絮终于来了,41,29935,30097,510935,512310,589004,591034,57830290,58261314,162,1375,2030,431024,0.0034464961188718584,0.007453256762156994,2.162560613762324,0.0509226203568661
+情蛊,86178,4000w福利·山大王,49,34935,35059,466080,467087,465067,466819,43932710,44161869,124,1007,1752,229159,0.003767199134748327,0.005216136222873572,1.384619192216406,0.0751019131612038
+失忆后死对头成了我男朋友？,86693,花絮15·恢复,20,5105,5149,85210,86239,108428,108973,5879998,5929760,44,1029,545,49762,0.0050263769506031656,0.008462928048614983,1.6837034173490373,0.04725023629706441
+奇洛李维斯回信 番外篇,93420,番外 · 天涯共此时,3,4298,4983,24108,30885,81186,83782,1374863,1500613,685,6777,2596,125750,0.03197595644569261,0.09146365856088934,2.860388514608768,0.05947578238762503
+,,,,,,,,,,,,,,,,,,,
+一屋暗灯 全一季,93038,主役版主题曲▪未说的,14,16951,17067,280431,281502,217245,218233,14114372,14232906,116,1071,988,118534,0.004547860710258003,0.008398106554085438,1.846605929496246,0.07820540431557098
+洄天 第一季,86815,完结语音 · 高能量S级监护人的一天,14,11584,11607,192572,192726,251097,251463,28949432,29014497,23,154,366,65065,0.0014576040335009977,0.0022475397790188076,1.5419412456073374,0.046157884062466445
+我在无限游戏里封神 第四季,86834,特别放送 · emoji大挑战,15,10091,10160,146657,147650,151195,151796,8766861,8861938,69,993,601,95077,0.003974999173253084,0.010845044765737702,2.7283137160660766,0.06693193496534823
+一颗苹果,90818,完结FT · 谢谢光临,35,6374,6401,120236,120668,171660,172347,14482434,14533719,27,432,687,51285,0.0040020971688220905,0.0035411865160234804,0.8848327181085744,0.03714018810887338
+于是麦麦决定离家出走,86179,程凛生日番外✦礼物,34,6575,6598,114250,114430,116654,116956,6372933,6402016,23,180,302,29083,0.002588852503986147,0.0045635188695691605,1.7627573848037115,0.056414378056705086
+再世权臣 第三季（上）,86827,花絮04 · 谢谢谢谢,10,3357,3371,61326,61417,54843,55018,3232103,3250491,14,91,175,18388,0.003190926827489379,0.005689175128391639,1.7829224660936152,0.06127085681049838
+再世权臣 第三季（下）,93437,第十二集 ·  雨后风荷,12,2406,2437,44815,45039,29723,29976,1101885,1117489,31,224,253,15604,0.008511926790700805,0.01416118741973981,1.6636876429918037,0.0812983720309581
+沉醉不醒,86740,中秋迷你剧场,31,3267,3279,74435,74522,58622,58745,4484127,4510640,12,87,123,26513,0.0020981883934359114,0.005912633607388908,2.8179707913199397,0.055817516384373135
+太傅他人人喊打 第二季,86723,小剧场·《龙床》,21,3059,3076,80020,80159,47703,47837,4070102,4086329,17,139,134,16227,0.002809047648994822,0.003986877970134409,1.419298804547177,0.06430169115956268
+蜉蝣,93202,ೀ˖˚  启动音试听·沈安,16,2456,2487,41542,42086,31138,31398,1523388,1547047,31,544,260,23659,0.008349926135268804,0.015530514878678315,1.8599583549703282,0.07920886680680297
+降水概率百分百,93005,完结彩蛋 ♡ 晴天娃娃,18,1993,2012,49766,49945,32894,33069,2486193,2526159,19,179,175,39966,0.005320119170669423,0.01607518000412679,3.0215826917471236,0.06084248087332547
+触礁,95034,周时也生日小剧场,14,1200,1214,13959,14258,15818,15940,846406,913810,14,299,122,67404,0.00771273233025667,0.07963554133595462,10.325204859443689,0.07616060225846925
+难言之欲,94857,小剧场·贰,11,654,665,21000,21388,13373,13526,424550,438486,11,388,153,13936,0.011440963134674343,0.032825344482393125,2.8691067435493025,0.049164571935531566
+娑婆,93178,番外二·玉人棋子,29,1684,1734,60392,62274,43294,43707,2579215,2662631,50,1882,413,83416,0.009539428096272,0.03234162332337552,3.3903105088673606,0.039673278879813305
+,,,,,,,,,,,,,,,,,,,
+天官赐福 第四季,91718,第十一集·笑吟吟渐渐淡红衣,18,10586,11500,199617,232802,148731,151493,18675650,20612332,914,33185,2762,1936682,0.018570439249383116,0.10370091536305295,5.584192919211524,0.07591109820255722
+恒星时刻 第一季,94789,歌曲《昨日之蝶》,5,3698,3968,52027,60160,78341,79398,3181651,3460533,270,8133,1057,278882,0.013492296498640559,0.0876532341227872,6.496539275698459,0.04997606992619461
+你的雪人能活多久 第一季,93787,傅让夷角色曲《廿廿》伴奏,19,2277,2413,54201,59288,69250,70425,2534236,2676118,136,5087,1175,141882,0.01696750902527076,0.0559861038987687,3.2996065489274318,0.03426340078097267
+伏特加与曼特宁,92988,第十三期,17,2250,2661,42481,45455,71384,73149,2772098,2915019,411,2974,1765,142921,0.024725428667488513,0.051556979587301745,2.0851804140849564,0.03637780420784973
+满城衣冠 全一季,90878,第17集 · 宁负天下人,17,2226,2303,63427,67014,61864,62208,3461660,3562438,77,3587,344,100778,0.005560584507952929,0.02911262226792926,5.235532744137139,0.037020961934156375
+宋玉章 第一季,86589,第十四折 ·  生死场,11,1923,1998,92888,100647,51373,51766,6662419,6973380,75,7759,393,310961,0.007649932844100987,0.0466738882679099,6.101215424904161,0.03859676235366843
+沉浮事,94775,渡情篇·第十二集,14,1606,1632,31928,33057,21230,21445,1612336,1635941,26,1129,215,23605,0.010127178520960905,0.014640248682656717,1.4456394396874515,0.07610165539752856
+旧故新长 全一季,86778,花絮02 ✧ 斯是陋室藏熊其中,7,1401,2051,7032,15584,154449,158236,3433911,3746650,650,8552,3787,312739,0.024519420650182262,0.09107370575416777,3.714349823085677,0.012961652215677848
+炽火难熄 全一季,94917,花絮06 · TuT,12,1086,1186,23877,26031,24519,25325,692069,749889,100,2154,806,57820,0.03287246625066275,0.0835465827829306,2.5415368030455032,0.04683119447186575
+悬日 下季,96485,ଫ第三期,3,936,1085,8295,11972,18923,20230,567371,772484,149,3677,1307,205113,0.06906938646092058,0.3615147760460087,5.234081183717385,0.05363321799307959
+绰约,86680,律法小贴士·18则,18,852,882,15211,16150,33938,34299,2665734,2714495,30,939,361,48761,0.010637044021450881,0.01829177254744847,1.7196292983803494,0.025715035423773288
+大王万万不可！ 第一季,94259,第二十集·整装待发,17,772,812,28164,30620,18914,19823,780790,840720,40,2456,909,59930,0.04805963836311727,0.07675559369356677,1.5970905380859426,0.04096251828683852
+沙子，时间，雨树,94825,第7集✧˖啊，我最亲爱的,7,691,753,7629,9469,12198,12707,393071,444569,62,1840,509,51498,0.041728152156091165,0.13101449865291512,3.1397148419808616,0.05925867632013851
+清白之年,94838,主题曲③·《丛生》,10,636,691,17921,20082,17184,17385,802755,831919,55,2161,201,29164,0.011696927374301676,0.03632988894494584,3.1059343862186535,0.03974690825424216
+解瘾,94782,小剧场❃注射,14,531,562,14930,15887,16267,16660,905441,953411,31,957,393,47970,0.024159340997110715,0.052979708230574935,2.192928533808556,0.03373349339735894
+二哈在狼群里疯狂造谣 第一季,94772,花絮2·狼羊斗嘴,6,474,541,5848,7740,15214,16161,595622,660796,67,1892,947,65174,0.06224530038122782,0.10942174734982925,1.7579117889971512,0.03347565125920426
+传闻,95625,✧第八集,5,383,406,9044,10928,12696,13074,336113,367533,23,1884,378,31420,0.029773156899810964,0.09348046639076739,3.1397566171883144,0.031054000305950742
+合笼蛊,94418,第十六集·大婚,14,356,381,12823,13867,10565,10685,754921,790267,25,1044,120,35346,0.011358258400378608,0.046820793169086564,4.122180665261663,0.035657463734206835
+愚蠢的有钱人 全一季,94873,第十四集,16,283,288,10024,10930,8477,8566,257970,267119,5,906,89,9149,0.010498997286775983,0.03546536418963445,3.37797631725316,0.033621293485874386
+干涸地,86725,火风L原著|干涸地·第八集,8,172,186,4444,5225,97100,97354,2455179,2478361,14,781,254,23182,0.002615859938208033,0.009442081412393964,3.6095515950529684,0.0019105532386958933
+我在霸总文学里当家庭医生 上季,91680,花絮4,14,98,99,7047,7144,8720,8760,123351,126593,1,97,40,3242,0.0045871559633027525,0.02628272166419405,5.729633322794302,0.011301369863013699
+请与我同眠,93966,花絮09·艺术的实践,17,41,42,523,538,6621,6640,94212,96542,1,15,19,2330,0.0028696571514876907,0.02473145671464357,8.618261837245004,0.006325301204819277
+,,,,,,,,,,,,,,,,,,,
+囚于永夜,86822,织音发布会纯享PV · 概念预告,0,0,0,0,0,328937,329576,5614170,5640020,0,0,639,25850,0.0019426212314212145,0.0046044206000174556,2.3702101704349636,0.0
+唇枪 上季,94802,织音发布会纯享PV,0,0,0,0,0,27464,27883,721788,769370,0,0,419,47582,0.01525633556655986,0.06592240380832044,4.320985437211725,0.0
+金嘉轩去了哪里 第一季,94831,01▸金尚添花周报,0,0,0,0,0,10281,13156,103023,232058,0,0,2875,129035,0.2796420581655481,1.2524873086592314,4.4788946157654115,0.0
+高门深户,94861,织音发布会纯享PV,0,0,0,0,0,4996,5017,62137,66976,0,0,21,4839,0.004203362690152122,0.07787630558282505,18.527143937704473,0.0
+六重奏 第一季,94859,预告·灼光,0,0,0,0,0,4771,7241,210379,251498,0,0,2470,41119,0.5177111716621253,0.1954520175492801,0.3775310023188726,0.0
+纯白恶魔 第一季,94773,织音发布会·纯享KV,0,0,0,0,0,4525,4562,175130,175954,0,0,37,824,0.008176795580110497,0.004705076229086964,0.5754181063950949,0.0
+祝祷月亮,94827,织音发布会 PV,0,0,0,0,0,3414,3488,18483,19749,0,0,74,1266,0.021675454012888107,0.0684953741275767,3.16004334150739,0.0
+此湖之东 上季,94819,定档预告·尘世之间,0,0,0,0,0,2339,2996,10409,16752,0,0,657,6343,0.28088926891834115,0.6093765011048131,2.16945454502916,0.0
+猫耳耳机专属小剧场,95972,入戏丨耳机专属番外后来06,0,0,0,0,0,859,880,16040,16608,0,0,21,568,0.024447031431897557,0.03541147132169576,1.4484978031112694,0.0
+什刹海是海吗,94863,第3集,0,0,0,0,0,9993,10926,282749,403410,0,0,933,120661,0.09336535574902431,0.426742446480801,4.570672312628773,0.0
+屏香记,94783,倒计时2天,0,,0,,0,,3793,,40792,,,,,,,,0.0
+热的汤，软的面包,86816,花絮 01,1,0,216,0,1127,9034,9676,85263,109065,216,1127,642,23802,0.07106486606154527,0.2791597762218078,3.9282389694514204,0.02232327408019843
+白木楠,96863,起床啦^o^,0,,0,,0,,756,,1978,,,,,,,,0.0
+,,,,,,,,,,,,,,,,,,,
+初三的六一儿童节,85562,花絮 | 第9弹,256,6513,6551,303230,304528,66154,66377,30110856,30223546,38,1298,223,112690,0.0033709223932037367,0.0037425040324326883,1.110231442876915,0.09869382466818326
+理想型,93439,番外·汪,54,1386,1397,41085,41296,19542,19666,1962054,1985182,11,211,124,23128,0.0063453075427284825,0.011787647027044108,1.8576951467943221,0.07103630631546833
+赤霞珠,95114,处暑福利音·饮酒小贴士·唐渡,19,1146,1173,13943,14090,16444,16716,504185,521680,27,147,272,17495,0.016540987594259305,0.0346995646439303,2.0977927978117274,0.07017229002153626
+舍舟,93775,第一百二十集：结局（下）,111,72,73,15268,15816,2268,2283,105746,107314,1,548,15,1568,0.006613756613756613,0.014827984037221267,2.2419911864278554,0.0319754708716601
+,,,,,,,,,,,,,,,,,,,
+尾钩,95503,启动音征集,48,2693,2879,50758,53679,32808,34846,2231616,2446821,186,2921,2038,215205,0.06211899536698366,0.0964346016518971,1.5524172772303435,0.08262067382195948
+谁来言说夜晚 上季,94321,第122集,105,1224,1266,46068,47837,18715,19323,3058675,3243220,42,1769,608,184545,0.03248730964467005,0.060334948956656066,1.8571851475720695,0.06551777674274181
+风月禁忌,96513,15✧试试？,10,864,1164,7519,13694,13890,15511,404207,569957,300,6175,1621,165750,0.11670266378689705,0.41006217111529486,3.5137344582303798,0.07504351750370705
+恋爱法则,96486,✈ 13,7,0,150,0,898,4680,5255,39807,69856,150,898,575,30049,0.12286324786324786,0.754867234406009,6.143962881774126,0.028544243577545196
+林子淙的好天气,96289,花絮02,2,0,23,0,100,1078,2305,4247,20246,23,100,1227,15999,1.1382189239332097,3.7671297386390394,3.30967062612297,0.009978308026030369
+全靠总裁当鹊桥,96914,第6集 这个人有问题！,1,,138,,420,,5057,,45719,,,,,,,,0.02728890646628436
+谁来言说夜晚 下季,96772,倒计时❶天·两人的百年好合,0,,0,,0,,3445,,94728,,,,,,,,0.0
+,,,,,,,,,,,,,,,,,,,
+灯花笑 上季,94733,配乐·风雪袭我身,16,2993,3054,140832,141914,71979,73266,5456054,5609171,61,1082,1287,153117,0.017880215062726627,0.02806368851921187,1.569538644851866,0.04168372778642208
+嫡谋·第一季,94462,第十六集·「闲子入局」,15,79,82,12985,12995,11679,11807,512958,523474,3,10,128,10516,0.010959842452264749,0.02050070376132159,1.8705290564724597,0.0069450326077750485
+,,,,,,,,,,,,,,,,,,,
+灯花笑 下季,96416,花絮五,8,797,1151,16675,33613,19248,21007,799423,994291,354,16938,1759,194868,0.09138611803823773,0.24376081248600553,2.66737243816409,0.05479126005617175
+全职高手广播剧第四季 上,96092,第七集,6,497,586,6346,7853,12518,13382,371634,443549,89,1507,864,71915,0.06902061032113756,0.1935102816211649,2.803659381173313,0.04379016589448513
+是心跳说谎 全一季,95516,第八集（下）,11,269,321,12212,15889,10308,10990,309067,346272,52,3677,682,37205,0.06616220411331004,0.12037842927261727,1.8194440600324617,0.029208371246587806
+乘鸾 第一季,94849,福利音·对诗《观星》,8,106,110,373,400,6922,7087,234176,248399,4,27,165,14223,0.023837041317538284,0.060736369226564633,2.547982713856245,0.015521377169465217
+金陵春 第一季,94497,第十六集,14,45,46,8401,9081,6767,6962,211956,219080,1,680,195,7124,0.028816314467267623,0.03361074940081904,1.1663791856171406,0.006607296753806378
+穿进赛博游戏后干掉BOSS成功上位 第一季,95678,第10集,6,50,62,3333,4037,6268,6469,173115,187739,12,704,201,14624,0.03206764518187619,0.08447563758195419,2.6342950067845217,0.009584170660071108
+任东西,94860,任东西·十四集,13,19,20,4643,4851,3727,3770,122372,126576,1,208,43,4204,0.011537429568017172,0.034354264047331086,2.9776358628930923,0.005305039787798408
+我花开后百花杀 第一季,94893,第十二集 · 携手之意,9,9,9,5294,6101,6062,6179,217242,225840,0,807,117,8598,0.01930056087099967,0.039577982158146216,2.0506130584844646,0.0014565463667260074
+尚公主 第一季,95847,陆·落花风伤春,0,0,0,0,0,6063,6948,230984,313079,0,0,885,82095,0.14596734289955468,0.3554142278253039,2.434888659101489,0.0
+大唐辟珠记·第一季,94834,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,
+放学后别来我办公室 全一季,86868,第十二课「空城计」,11,587,630,7650,8714,21645,21902,957090,999820,43,1064,257,42730,0.011873411873411873,0.04464574909360666,3.760144899342865,0.02876449639302347
+凶祟 第二季,94840,第五集·冥婚,4,252,303,2520,3418,8891,9254,141005,161133,51,898,363,20128,0.040827803396693285,0.14274671110953513,3.496311318112608,0.03274259779554787
+茱丽叶塔 全一季,95106,花絮7（认真版）,10,157,176,6131,7150,6954,7036,130199,138435,19,1019,82,8236,0.01179177451826287,0.06325701426278235,5.3645033802852256,0.025014212620807278
+最红谐星 下季,94605,✭第十六期✭,18,126,130,10409,10528,3856,3900,76082,78893,4,119,44,2811,0.011410788381742738,0.0369469782602981,3.2378988220843063,0.03333333333333333
+,,,,,,,,,,,,,,,,,,,
+沉入地球,93569,花絮 · 10,96,1082,1136,23039,24561,14616,15023,971464,1012494,54,1522,407,41030,0.027846195949644225,0.04223522436240561,1.5167322832455046,0.07561738667376688
+玫瑰美人 全一季,94009,番外二,17,251,265,11638,11892,8920,8942,183551,189146,14,254,22,5595,0.002466367713004484,0.030481991381142028,12.359061959990314,0.029635428315813016
+,,,,,,,,,,,,,,,,,,,
+楚乌 第一季,94336,楚乌小贴士4,10,171,171,1593,1593,9495,9535,628709,665863,0,0,40,37154,0.00421274354923644,0.05909570246330178,14.02784237222626,0.01793392763502884
+错登科  第一季,94787,第十二集·伤情怨,12,140,141,1676,1682,6373,6456,209246,214889,1,6,83,5643,0.013023693707829907,0.02696825745772918,2.0707072864832297,0.02184014869888476
+,,,,,,,,,,,,,,,,,,,
+守寡后我重生了 第二季,95212,第十二集,11,220,232,8889,9732,5797,5969,296154,322015,12,843,172,25861,0.029670519234086597,0.08732281178035751,2.9430833714577473,0.03886748199028313
